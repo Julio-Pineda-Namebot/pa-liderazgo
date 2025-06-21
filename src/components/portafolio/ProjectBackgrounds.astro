@@ -1,0 +1,15 @@
+---
+const backgrounds = [
+    { id: 'primero', image: "/images/tema1.png" },
+    { id: 'segundo', image: "/images/tema2.png" },
+    { id: 'tercero', image: "/images/tema3.png"},
+];
+---
+
+{backgrounds.map(bg => (
+    <div
+        id={`${bg.id}-bg`}
+        class="absolute inset-0 opacity-0 transition-opacity duration-300"
+        style={`background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( "${bg.image}" ); background-repeat: no-repeat;`}
+    ></div>
+))}

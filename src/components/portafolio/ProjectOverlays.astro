@@ -1,0 +1,30 @@
+---
+const overlays = [
+    { 
+        id: 'primero', 
+        text: 'Creating the official Atomic Habits app with focus on user behavior and habit formation.',
+        position: 'bottom-8 right-8'
+    },
+    { 
+        id: 'segundo', 
+        text: 'Digital product design and development for innovative startups and established brands.',
+        position: 'top-8 right-8'
+    },
+    { 
+        id: 'tercero', 
+        text: 'Redesigning the future of work through better freelance platform experiences.',
+        position: 'bottom-8 right-8'
+    },
+];
+---
+
+{overlays.map(overlay => (
+    <div
+        class={`absolute z-40 bg-black/40 backdrop-blur-md rounded-xl p-4 max-w-xs opacity-0 project-overlay ${overlay.position}`}
+        id={`${overlay.id}-overlay`}
+    >
+        <p class="text-white text-sm opacity-90 leading-relaxed">
+            {overlay.text}
+        </p>
+    </div>
+))}

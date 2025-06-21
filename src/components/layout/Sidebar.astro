@@ -1,0 +1,34 @@
+---
+const projects = [
+    { id: 'primero', name: 'Primer Tema' },
+    { id: 'segundo', name: 'Segundo Tema' },
+    { id: 'tercero', name: 'Tercer Tema ' },
+];
+---
+
+<aside class="absolute left-0 top-0 h-full w-48 z-40 flex flex-col justify-center pl-8">
+    {projects.map(project => (
+        <button
+            class="
+            project-item 
+            mb-3 
+            px-6 
+            py-3 
+            bg-white/10
+            backdrop-blur-sm
+            text-white/90
+            border border-transparent
+            hover:text-white
+            hover:bg-transparent
+            hover:border-white
+            rounded-full
+            transition-all 
+            duration-300 
+            hover:scale-105 
+            text-center"
+            data-project={project.id}
+        >
+            {project.name}
+        </button>
+    ))}
+</aside>
