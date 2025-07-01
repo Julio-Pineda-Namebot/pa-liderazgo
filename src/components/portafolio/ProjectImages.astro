@@ -1,36 +1,42 @@
 ---
 const images = [
-    { 
-        id: 'primero', 
-        src: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop', 
-        alt: 'Primer Tema',
-        position: 'top-20 right-20'
-    },
-    { 
-        id: 'segundo', 
-        src: 'https://images.unsplash.com/photo-1551650975-87qdeedd944c3?w=400&h=300&fit=crop', 
-        alt: 'Segundo Tema',
-        position: 'top-1/2 right-20 -translate-y-1/2'
-    },
-    { 
-        id: 'tercero', 
-        src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop', 
-        alt: 'Tercer Tema',
-        position: 'bottom-20 right-1/2 translate-x-1/2'
-    },
-];
+  {
+    id: "primero",
+    src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+    alt: "Primer Tema",
+    position: "top-20 right-20",
+    transition_name: "image-tema-uno"
+  },
+  {
+    id: "segundo",
+    src: "https://images.unsplash.com/photo-1551650975-87qdeedd944c3?w=400&h=300&fit=crop",
+    alt: "Segundo Tema",
+    position: "top-1/2 right-20 -translate-y-1/2",
+    transition_name: "image-tema-dos"
+  },
+  {
+    id: "tercero",
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+    alt: "Tercer Tema",
+    position: "bottom-20 right-1/2 translate-x-1/2",
+    transition_name: "image-tema-tres"
+  }
+]
 ---
 
-{images.map(image => (
+{
+  images.map(image => (
     <div
-        class={`absolute z-40 opacity-0 project-image ${image.position}`}
-        id={`${image.id}-image`}
-        data-slide-from={image.id}
+      class={`absolute z-40 opacity-0 project-image ${image.position}`}
+      id={`${image.id}-image`}
+      data-slide-from={image.id}
     >
-        <img
-            src={image.src || "/placeholder.svg"}
-            alt={image.alt}
-            class="w-80 h-48 object-cover rounded-2xl shadow-2xl"
-        />
+      <img
+        src={image.src || "/placeholder.svg"}
+        alt={image.alt}
+        transition:name={image.transition_name}
+        class="w-80 h-48 object-cover rounded-2xl shadow-2xl"
+      />
     </div>
-))}
+  ))
+}

@@ -1,0 +1,62 @@
+---
+import AnimatedBackground from "@components/layout/AnimatedBackground.astro"
+import Layout from "@layouts/Layout.astro"
+---
+
+<Layout title="PA Liderazgo - Gestión de Equipos">
+  <div
+    class="h-screen w-screen relative overflow-hidden"
+    id="portafolio-container"
+  >
+    <!-- Fondo animado -->
+    <!-- <div class="absolute inset-0 gradient-animated animate-gradient-shift"></div> -->
+    <AnimatedBackground />
+    <div class="text-white relative z-10">
+      <div
+        class="container mx-auto p-8"
+        id="content-container"
+        style="opacity: 0;"
+      >
+        <h1 class="font-bold text-3xl">Tema 1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+          obcaecati impedit ipsum, esse, quas dolores commodi maxime explicabo,
+          possimus laudantium quaerat architecto quo similique incidunt dolorum
+          sapiente nemo odit exercitationem?
+        </p>
+      </div>
+    </div>
+    <div class="absolute inset-0 z-20">
+      <img
+        id="proyecto-imagen-principal"
+        src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c"
+        class="size-full object-cover"
+        transition:name="image-tema-uno"
+        alt="Tema Uno - Liderazgo"
+      />
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import gsap from "gsap"
+  document.addEventListener("astro:page-load", () => {
+    const mainImage = document.getElementById("proyecto-imagen-principal")
+    if (mainImage) {
+      setTimeout(() => {
+        gsap.to(mainImage, {
+          y: 200, // Move image down 200px
+          duration: 1.2,
+          ease: "power2.out"
+        })
+
+        const contentContainer = document.getElementById("content-container")
+        gsap.to(contentContainer, {
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.out"
+        })
+      }, 1000) // Espera de 1 segundo antes de la animación
+    }
+  })
+</script>

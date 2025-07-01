@@ -1,16 +1,19 @@
 ---
 const projects = [
-    { id: 'primero', name: 'Primer Tema' },
-    { id: 'segundo', name: 'Segundo Tema' },
-    { id: 'tercero', name: 'Tercer Tema ' },
-];
+  { id: "primero", name: "Primer Tema", href: "projects/tema-uno" },
+  { id: "segundo", name: "Segundo Tema", href: "projects/tema-dos" },
+  { id: "tercero", name: "Tercer Tema ", href: "projects/tema-tres" }
+]
 ---
 
-<aside class="absolute left-0 top-0 h-full w-48 z-40 flex flex-col justify-center pl-8">
-    {projects.map(project => (
-        <button
-            class="
-            project-item 
+<aside
+  class="absolute left-0 top-0 h-full w-48 z-40 flex flex-col justify-center pl-8"
+>
+  {
+    projects.map(project => (
+      <a
+        href={project.href}
+        class="project-item
             mb-3 
             px-6 
             py-3 
@@ -26,9 +29,10 @@ const projects = [
             duration-300 
             hover:scale-105 
             text-center"
-            data-project={project.id}
-        >
-            {project.name}
-        </button>
-    ))}
+        data-project={project.id}
+      >
+        {project.name}
+      </a>
+    ))
+  }
 </aside>

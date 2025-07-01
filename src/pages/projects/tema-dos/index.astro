@@ -1,0 +1,31 @@
+---
+import AnimatedBackground from "@components/layout/AnimatedBackground.astro"
+import Layout from "@layouts/Layout.astro"
+---
+
+<Layout title="PA Liderazgo - Gestión de Equipos">
+  <div
+    class="h-screen w-screen relative overflow-hidden"
+    id="portafolio-container"
+  >
+    <!-- Fondo animado -->
+    <!-- <div class="absolute inset-0 gradient-animated animate-gradient-shift"></div> -->
+    <AnimatedBackground />
+    <div
+      class="absolute inset-0"
+      style={`background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( "/images/tema-dos.jpg" ); background-repeat: no-repeat;`}
+    >
+    </div>
+    <div class="absolute inset-0">
+      <img
+        id="proyecto-imagen-principal"
+        src="https://images.unsplash.com/photo-1551650975-87qdeedd944c3"
+        class="size-full object-cover gsap-animated gsap-element fade-in-initial"
+        loading="eager"
+        decoding="async"
+        transition:name="image-tema-dos"
+        alt="Tema Dos - Gestión"
+      />
+    </div>
+  </div>
+</Layout>

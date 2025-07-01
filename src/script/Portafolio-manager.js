@@ -30,14 +30,14 @@ export class PortfolioManager {
 
   setupEventListeners() {
     DOMManager.setupProjectEventListeners(
-      this.projects,
-      (projectId) => this.handleProjectHover(projectId),
-      () => this.handleProjectLeave(),
-      (projectId, projects) => {
-        if (projects[projectId]) {
-          window.location.href = projects[projectId].url
-        }
-      },
+      // this.projects,
+      projectId => this.handleProjectHover(projectId),
+      () => this.handleProjectLeave()
+      // (projectId, projects) => {
+      //   if (projects[projectId]) {
+      //     window.location.href = projects[projectId].url
+      //   }
+      // }
     )
   }
 

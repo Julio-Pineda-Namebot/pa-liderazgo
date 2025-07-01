@@ -1,35 +1,38 @@
 ---
-import Header from "@components/layout/Header.astro";
-import Sidebar from "@components/layout/Sidebar.astro";
-import ProjectBackgrounds from "@components/portafolio/ProjectBackgrounds.astro";
-import InitialState from "@components/portafolio/InitialState.astro";
-import ProjectContent from "@components/portafolio/ProjectContent.astro";
-import ProjectImages from "@components/portafolio/ProjectImages.astro";
-import ProjectOverlays from "@components/portafolio/ProjectOverlays.astro";
-import AnimatedBackground from "@components/layout/AnimatedBackground.astro";
+import Header from "@components/layout/Header.astro"
+import Sidebar from "@components/layout/Sidebar.astro"
+import ProjectBackgrounds from "@components/portafolio/ProjectBackgrounds.astro"
+import InitialState from "@components/portafolio/InitialState.astro"
+import ProjectContent from "@components/portafolio/ProjectContent.astro"
+import ProjectImages from "@components/portafolio/ProjectImages.astro"
+import ProjectOverlays from "@components/portafolio/ProjectOverlays.astro"
+import AnimatedBackground from "@components/layout/AnimatedBackground.astro"
 ---
 
 <div
-    class="h-screen w-screen relative overflow-hidden"
-    id="portafolio-container"
+  class="h-screen w-screen relative overflow-hidden"
+  id="portafolio-container"
 >
-    <!-- Fondo animado -->
-    <!-- <div class="absolute inset-0 gradient-animated animate-gradient-shift"></div> -->
-    <AnimatedBackground />
+  <!-- Fondo animado -->
+  <!-- <div class="absolute inset-0 gradient-animated animate-gradient-shift"></div> -->
+  <AnimatedBackground />
 
-    <!-- Pages -->
-    <ProjectBackgrounds />
-    <Header />
-    <Sidebar />
-    <InitialState />
-    <ProjectContent />
-    <ProjectImages />
-    <ProjectOverlays />
+  <!-- Pages -->
+  <ProjectBackgrounds />
+  <Header />
+  <Sidebar />
+  <InitialState />
+  <ProjectContent />
+  <ProjectImages />
+  <ProjectOverlays />
 </div>
 
 <script>
-    import { PortfolioManager } from "@script/Portafolio-manager";
+  import { PortfolioManager } from "@script/Portafolio-manager"
 
-    const portfolioManager = new PortfolioManager();
-    portfolioManager.init();
+  document.addEventListener("astro:page-load", () => {
+    // Inicializar el portfolio manager
+    const portfolioManager = new PortfolioManager()
+    portfolioManager.init()
+  })
 </script>
