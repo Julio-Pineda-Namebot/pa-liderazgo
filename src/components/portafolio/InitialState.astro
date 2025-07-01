@@ -1,11 +1,24 @@
 ---
+import students from "@data/students.json";
+let activeIndex = 0;
 ---
 
-<div class="absolute inset-0 flex flex-col justify-center items-center text-center z-30" id="initial-state">
-    <h1 class="text-4xl md:text-6xl font-light text-white/60 mb-4">
-        Un buen lider
-    </h1>
-    <p class="text-lg text-white/40">
-        Un buen lider es...
-    </p>
+<div
+    class="absolute inset-0 flex position-relative flex-col w-full h-full z-40"
+    id="initial-state"
+>
+    <div class="slides-container">
+        <div class="slides-inner">
+            {students.map((student, idx) => (
+            <div class={`slide${idx === activeIndex ? ' active' : ''}${idx === activeIndex + 1 ? ' next' : ''}`}>
+                <div class="card">
+                <h2>{student.nombres} {student.apellidos}</h2>
+                <p><strong>Ciclo:</strong> {student.ciclo}</p>
+                <p><strong>Código UTP:</strong> {student.codigoUTP}</p>
+                <p><strong>Carrera:</strong> {student.carrera}</p>
+                </div>
+            </div>
+            ))}
+        </div>
+    </div>
 </div>

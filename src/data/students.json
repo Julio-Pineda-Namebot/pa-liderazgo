@@ -1,0 +1,23 @@
+[
+  {
+    "nombres": "Julio Nicolas",
+    "apellidos": "Pineda Sanchez",
+    "ciclo": "VII",
+    "codigoUTP": "U22205882",
+    "carrera": "Ingeniería de Sistemas e Informática"
+  },
+  {
+    "nombres": "Renzo Eduardo",
+    "apellidos": "Püppi Hurtado",
+    "ciclo": "VII",
+    "codigoUTP": "U22202157",
+    "carrera": "Ingeniería de Sistemas e Informática"
+  },
+  {
+    "nombres": "Mateo",
+    "apellidos": "Rioja Portocarrero",
+    "ciclo": "VII",
+    "codigoUTP": "",
+    "carrera": "Ingeniería de Sistemas e Informática"
+  }
+]

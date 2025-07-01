@@ -3,6 +3,7 @@ import { AnimationManager } from "@script/utils/animations"
 import { DOMManager } from "@script/utils/dom"
 import { PROJECTS_CONFIG, DEFAULT_BRAND_NAME } from "@script/config/projects"
 import gsap from "gsap"
+import { setupSlideGsap } from "@script/utils/slideGsap"
 
 export class PortfolioManager {
   constructor() {
@@ -18,6 +19,7 @@ export class PortfolioManager {
     this.setupClock()
     this.setupInitialAnimations()
     this.setupEventListeners()
+    setupSlideGsap()
   }
 
   setupClock() {
