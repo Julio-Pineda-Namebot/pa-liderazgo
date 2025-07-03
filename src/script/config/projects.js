@@ -4,4 +4,4 @@ export const PROJECTS_CONFIG = {
   tercero: { name: "Tercero Tema", url: "/projects/tema-tres" },
 }
 
-export const DEFAULT_BRAND_NAME = "PA Liderazgo - Gestión de Equipos"
+export const DEFAULT_BRAND_NAME = "Liderazgo Y Gestión de Equipos"

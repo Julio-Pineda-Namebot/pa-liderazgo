@@ -107,29 +107,35 @@ export class AnimationManager {
       // 3. Anima la entrada de la imagen con efecto de rebote
       .fromTo(
         `#${projectId}-image`,
-        { opacity: 0, scale: 0.7, rotation: -10, y: 20 }, // Estado inicial
         {
           opacity: 1,
           scale: 1,
-          rotation: -1, // Rotación final sutil
+          rotation: 0,
           y: 0,
-          duration: 0.4, // 400ms
-          ease: "back.out(1.2)" // Efecto de rebote al final
+          clipPath: "inset(0 100% 0 0)"
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          y: 0,
+          clipPath: "inset(0 0% 0 0)",
+          duration: 0.45,
         },
         "-=0.2" // Empieza 200ms antes de que termine la animación anterior
       )
       // 4. Anima la entrada del overlay
       .fromTo(
         `#${projectId}-overlay`,
-        { opacity: 0, y: 20, scale: 0.9 }, // Estado inicial
+        { opacity: 0, y: 20, scale: 0.9 },
         {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.25, // 250ms
+          duration: 1,
           ease: "power2.out"
         },
-        "-=0.15" // Empieza 150ms antes de que termine la animación anterior
+        "-=0.15"
       )
   }
 

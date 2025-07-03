@@ -1,28 +1,13 @@
 ---
 import Layout from "@layouts/Layout.astro"
-import AnimatedBackground from "@components/layout/AnimatedBackground.astro"
+import HeroSection from "@components/projects/HeroSection.astro"
 ---
 
-<Layout title="PA Liderazgo - Gestión de Equipos">
-  <div
-    class="h-screen w-screen relative overflow-hidden"
-    id="portafolio-container"
+<Layout title="Liderazgo - Tema tres">
+  <HeroSection
+    title="Habilidades Sociales en la Conducción de Reuniones"
+    description="lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop"
   >
-    <!-- Fondo animado -->
-    <!-- <div class="absolute inset-0 gradient-animated animate-gradient-shift"></div> -->
-    <AnimatedBackground />
-    <div
-      class="absolute inset-0"
-      style={`background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( "/images/tema-tres.jpg" ); background-repeat: no-repeat;`}
-    >
-    </div>
-    <div class="absolute inset-0">
-      <img
-        id="proyecto-imagen-principal"
-        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
-        class="size-full object-cover"
-        transition:name="image-tema-tres"
-      />
-    </div>
-  </div>
+  </HeroSection>
 </Layout>

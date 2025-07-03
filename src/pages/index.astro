@@ -1,8 +1,29 @@
 ---
-import ContentPage from "@pages/home/Content-page.astro"
-import Layout from "@layouts/Layout.astro"
+import Header from "@components/layout/Header.astro";
+import Sidebar from "@components/layout/Sidebar.astro";
+import ProjectBackgrounds from "@components/portafolio/ProjectBackgrounds.astro";
+import InitialState from "@components/portafolio/InitialState.astro";
+import ProjectContent from "@components/portafolio/ProjectContent.astro";
+import ProjectImages from "@components/portafolio/ProjectImages.astro";
+import ProjectOverlays from "@components/portafolio/ProjectOverlays.astro";
+import AnimatedBackground from "@components/layout/AnimatedBackground.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="PA Liderazgo - Gestión de Equipos">
-  <ContentPage />
+<Layout title="Liderazgo Y Gestión de Equipos">
+  <div
+    class="h-screen w-screen relative overflow-hidden"
+    id="portafolio-container"
+  >
+    <!-- Fondo animado -->
+    <AnimatedBackground />
+
+    <!-- Pages -->
+    <ProjectBackgrounds />
+    <Sidebar />
+    <InitialState />
+    <ProjectContent />
+    <ProjectImages />
+    <ProjectOverlays />
+  </div>
 </Layout>

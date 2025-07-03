@@ -2,24 +2,21 @@
 const images = [
   {
     id: "primero",
-    src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+    src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1920&h=1080&fit=crop",
     alt: "Primer Tema",
     position: "top-20 right-20",
-    transition_name: "image-tema-uno"
   },
   {
     id: "segundo",
-    src: "https://images.unsplash.com/photo-1551650975-87qdeedd944c3?w=400&h=300&fit=crop",
+    src: "https://plus.unsplash.com/premium_photo-1745952614379-fa5d58983e6e?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Segundo Tema",
-    position: "top-1/2 right-20 -translate-y-1/2",
-    transition_name: "image-tema-dos"
+    position: "top-[50vh] right-20",
   },
   {
     id: "tercero",
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop",
     alt: "Tercer Tema",
-    position: "bottom-20 right-1/2 translate-x-1/2",
-    transition_name: "image-tema-tres"
+    position: "bottom-20 right-20",
   }
 ]
 ---
@@ -27,16 +24,70 @@ const images = [
 {
   images.map(image => (
     <div
-      class={`absolute z-40 opacity-0 project-image ${image.position}`}
+      class={`absolute z-40 opacity-0 scale-50 project-image ${image.position}`}
       id={`${image.id}-image`}
       data-slide-from={image.id}
     >
       <img
         src={image.src || "/placeholder.svg"}
         alt={image.alt}
-        transition:name={image.transition_name}
         class="w-80 h-48 object-cover rounded-2xl shadow-2xl"
       />
     </div>
   ))
 }
+
+<script>
+  import gsap from "gsap"
+
+  document.addEventListener("astro:page-load", () => {
+    // Escucha clicks en los botones del sidebar
+    document.querySelectorAll('.project-item').forEach(btn => {
+      btn.addEventListener('click', e => {
+        // Evita navegación inmediata para mostrar la animación
+        e.preventDefault()
+        const projectId = btn.getAttribute('data-project')
+        const imageDiv = document.getElementById(`${projectId}-image`)
+        if (imageDiv) {
+          // Lleva la imagen al frente y la hace crecer
+          gsap.to(imageDiv, {
+            zIndex: 50,
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: "100vw",
+            height: "100vh",
+            scale:  1,
+            opacity: 1,
+            duration: 1.5,
+            ease: "power2.inOut",
+            onStart: () => {
+              imageDiv.style.pointerEvents = "none"
+              imageDiv.style.position = "fixed"
+              imageDiv.style.display = "flex"
+              imageDiv.style.alignItems = "center"
+              imageDiv.style.justifyContent = "center"
+            },
+            onComplete: () => {
+              window.location.href = btn.getAttribute('href')
+            }
+          })
+        const img = imageDiv.querySelector("img")
+          if (img) {
+            gsap.to(img, {
+              width: "100vw",
+              height: "100vh",
+              borderRadius: 0,
+              objectFit: "cover",
+              duration: 1.5,
+              ease: "power2.inOut"
+            })
+          }
+        } else {
+          window.location.href = btn.getAttribute('href')
+        }
+      })
+    })
+  })
+</script>
