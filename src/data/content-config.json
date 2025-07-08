@@ -1,0 +1,122 @@
+{
+  "heroContent": {
+    "features": [
+      {
+        "icon": "🎯",
+        "title": "Enfoque",
+        "description": "Desarrollo de competencias directivas y habilidades de gestión de equipos efectivas",
+        "color": "blue"
+      },
+      {
+        "icon": "📊",
+        "title": "Metodología",
+        "description": "Casos prácticos, análisis situacional y técnicas de liderazgo adaptativo",
+        "color": "green"
+      },
+      {
+        "icon": "🚀",
+        "title": "Resultados",
+        "description": "Líderes capacitados, equipos productivos y comunicación organizacional mejorada",
+        "color": "purple"
+      }
+    ]
+  },
+  "mainContent": {
+    "title": "Explorando el Contenido",
+    "subtitle": "Descubre los conceptos fundamentales a través de una experiencia visual e interactiva",
+    "conceptCards": [
+      {
+        "id": "card-1",
+        "icon": "💡",
+        "title": "Fundamentos Teóricos",
+        "description": "Base conceptual sólida para el desarrollo profesional",
+        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+        "points": [
+          "Marco teórico actualizado",
+          "Investigación científica respaldada",
+          "Conceptos aplicables",
+          "Casos de estudio reales"
+        ],
+        "color": "blue"
+      },
+      {
+        "id": "card-2",
+        "icon": "🎯",
+        "title": "Aplicación Práctica",
+        "description": "Herramientas y técnicas para implementar en el campo laboral",
+        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+        "points": [
+          "Ejercicios interactivos",
+          "Simulaciones realistas",
+          "Feedback inmediato",
+          "Evaluación continua"
+        ],
+        "color": "green"
+      },
+      {
+        "id": "card-3",
+        "icon": "📈",
+        "title": "Desarrollo Profesional",
+        "description": "Crecimiento personal y competencias para el futuro",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+        "points": [
+          "Plan de carrera personalizado",
+          "Competencias del siglo XXI",
+          "Networking profesional",
+          "Certificación reconocida"
+        ],
+        "color": "purple"
+      }
+    ],
+    "statistics": [
+      {
+        "value": "95%",
+        "label": "Satisfacción de estudiantes",
+        "color": "blue"
+      },
+      {
+        "value": "87%",
+        "label": "Aplicación en el trabajo",
+        "color": "green"
+      },
+      {
+        "value": "92%",
+        "label": "Recomendación del curso",
+        "color": "purple"
+      },
+      {
+        "value": "89%",
+        "label": "Mejora de competencias",
+        "color": "orange"
+      }
+    ],
+    "methodology": {
+      "title": "Metodología de Aprendizaje",
+      "steps": [
+        {
+          "icon": "📚",
+          "title": "Exploración Teórica",
+          "description": "Inmersión en conceptos fundamentales y marcos de referencia",
+          "color": "purple"
+        },
+        {
+          "icon": "🔬",
+          "title": "Análisis Crítico",
+          "description": "Evaluación y reflexión sobre casos prácticos",
+          "color": "blue"
+        },
+        {
+          "icon": "⚡",
+          "title": "Síntesis Aplicada",
+          "description": "Integración de conocimientos en soluciones innovadoras",
+          "color": "green"
+        }
+      ]
+    },
+    "callToAction": {
+      "title": "¿Listo para profundizar en el tema?",
+      "description": "Explora cada sección y descubre cómo estos conceptos pueden transformar tu perspectiva profesional",
+      "buttonText": "Comenzar Exploración"
+    }
+  }
+}

@@ -1,12 +1,171 @@
 ---
+// Obtener la URL actual para determinar si mostrar el botón "Volver"
+const currentPath = Astro.url.pathname
 ---
 
-<header class="absolute top-0 left-0 right-0 z-50 flex justify-between items-center p-6">
-    <div class="flex-1"></div>
-    <div class="text-white font-bold text-lg transition-all duration-300 text-center" id="brand-name">
-        PA Liderazgo - Gestión de Equipos
+<header
+  id="main-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out"
+>
+  <!-- Background con blur -->
+  <div
+    id="header-bg"
+    class="absolute inset-0 bg-white/40 backdrop-blur-sm border-b -my-2 border-white/10 opacity-0 transition-all duration-500"
+  >
+  </div>
+
+  <!-- Contenido del header -->
+  <div
+    class="relative flex justify-between items-center px-6 py-8 transition-all duration-500"
+    id="header-content"
+  >
+    <!-- Menú izquierdo -->
+    <div class="flex-1">
+      {
+        currentPath !== "/" && (
+          <a
+            href="/"
+            class="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium"
+            id="menu-button"
+          >
+            Volver
+          </a>
+        )
+      }
     </div>
-    <div class="flex-1 flex justify-end">
-        <div class="text-white/60 text-sm" id="current-time"></div>
+
+    <!-- Logo/Título central -->
+    <div
+      class="text-white font-bold text-xl transition-all duration-500 text-center"
+      id="brand-name"
+    >
+      Liderazgo Y Gestión de Equipos
     </div>
+
+    <!-- Info derecha (tiempo y ubicación) -->
+    <div class="flex-1 flex justify-end items-center gap-4">
+      <div
+        class="text-white/60 text-sm transition-all duration-300"
+        id="location-info"
+      >
+        LDN
+      </div>
+      <div
+        class="text-white/60 text-sm transition-all duration-300"
+        id="current-time"
+      >
+      </div>
+      <div
+        class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+        title="En línea"
+      >
+      </div>
+    </div>
+  </div>
 </header>
+
+<script>
+  import gsap from "gsap"
+  import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+  document.addEventListener("astro:page-load", () => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    const header = document.getElementById("main-header")
+    const headerBg = document.getElementById("header-bg")
+    const headerContent = document.getElementById("header-content")
+    const brandName = document.getElementById("brand-name")
+
+    if (header && headerBg && headerContent && brandName) {
+      // Estado inicial
+      gsap.set(headerBg, { opacity: 0 })
+
+      // Crear timeline para el scroll
+      const headerTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "+=150",
+          scrub: 1,
+          onUpdate: self => {
+            const progress = self.progress
+
+            // Aplicar transformaciones basadas en el progreso del scroll
+            gsap.to(headerBg, {
+              opacity: progress,
+              duration: 0.1
+            })
+
+            // Animar el contenido del header (padding y tamaño)
+            gsap.to(headerContent, {
+              paddingTop: gsap.utils.interpolate(24, 8, progress) + "px",
+              paddingBottom: gsap.utils.interpolate(24, 8, progress) + "px",
+              paddingLeft: gsap.utils.interpolate(24, 64, progress) + "px",
+              paddingRight: gsap.utils.interpolate(24, 64, progress) + "px",
+              duration: 0.1
+            })
+
+            // Animar el header completo (ancho y posición)
+            gsap.to(header, {
+              left: gsap.utils.interpolate(0, 400, progress) + "px",
+              right: gsap.utils.interpolate(0, 400, progress) + "px",
+              top: gsap.utils.interpolate(0, 20, progress) + "px",
+              borderRadius: gsap.utils.interpolate(0, 20, progress) + "px",
+              duration: 0.1
+            })
+
+            // Animar el background con border radius
+            gsap.to(headerBg, {
+              borderRadius: gsap.utils.interpolate(0, 20, progress) + "px",
+              duration: 0.1
+            })
+
+            // Animar el tamaño del texto
+            gsap.to(brandName, {
+              fontSize: gsap.utils.interpolate(20, 14, progress) + "px",
+              duration: 0.1
+            })
+          }
+        }
+      })
+
+      // Efecto hover para el botón de menú
+      const menuButton = document.getElementById("menu-button")
+      if (menuButton) {
+        menuButton.addEventListener("mouseenter", () => {
+          gsap.to(menuButton, {
+            scale: 1.05,
+            duration: 0.2,
+            ease: "power2.out"
+          })
+        })
+
+        menuButton.addEventListener("mouseleave", () => {
+          gsap.to(menuButton, {
+            scale: 1,
+            duration: 0.2,
+            ease: "power2.out"
+          })
+        })
+      }
+    }
+
+    // Inicializar el reloj (solo si no está ya inicializado por ClockManager)
+    const timeElement = document.getElementById("current-time")
+    if (timeElement && timeElement.textContent === "") {
+      const updateTime = () => {
+        const now = new Date()
+        const timeString = now.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit"
+        })
+        if (timeElement) {
+          timeElement.textContent = timeString
+        }
+      }
+
+      updateTime()
+      setInterval(updateTime, 1000)
+    }
+  })
+</script>

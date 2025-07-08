@@ -6,8 +6,8 @@ export class DOMManager {
     }
   }
 
-  static setupProjectEventListeners(projects, onHover, onLeave, onClick) {
-    document.querySelectorAll(".project-item").forEach((button) => {
+  static setupProjectEventListeners(onHover, onLeave) {
+    document.querySelectorAll(".project-item").forEach(button => {
       const projectId = button.dataset.project
 
       button.addEventListener("mouseenter", () => {
@@ -16,10 +16,6 @@ export class DOMManager {
 
       button.addEventListener("mouseleave", () => {
         onLeave()
-      })
-
-      button.addEventListener("click", () => {
-        onClick(projectId, projects)
       })
     })
   }

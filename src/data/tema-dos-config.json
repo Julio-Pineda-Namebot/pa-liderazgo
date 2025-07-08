@@ -1,0 +1,123 @@
+{
+  "tema": "Dinámicas de Grupo",
+  "heroContent": {
+    "features": [
+      {
+        "icon": "👥",
+        "title": "Cohesión Grupal",
+        "description": "Fortalecimiento de vínculos y trabajo colaborativo efectivo",
+        "color": "green"
+      },
+      {
+        "icon": "🔄",
+        "title": "Roles y Funciones",
+        "description": "Definición clara de responsabilidades y expectativas del equipo",
+        "color": "blue"
+      },
+      {
+        "icon": "⚡",
+        "title": "Resolución de Conflictos",
+        "description": "Técnicas para manejar y resolver tensiones grupales constructivamente",
+        "color": "orange"
+      }
+    ]
+  },
+  "mainContent": {
+    "title": "Dinámicas de Grupo",
+    "subtitle": "Comprende los procesos internos de los equipos y aprende a optimizar las interacciones para lograr mayor efectividad",
+    "conceptCards": [
+      {
+        "id": "formacion-equipos",
+        "icon": "🏗️",
+        "title": "Formación de Equipos",
+        "description": "Proceso estructurado para crear grupos cohesivos y productivos desde el inicio",
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
+        "points": [
+          "Selección estratégica de miembros",
+          "Establecimiento de objetivos comunes",
+          "Creación de normas y protocolos",
+          "Desarrollo de identidad grupal"
+        ],
+        "color": "green"
+      },
+      {
+        "id": "comunicacion-grupal",
+        "icon": "💬",
+        "title": "Comunicación Efectiva",
+        "description": "Patrones y técnicas de comunicación que facilitan la colaboración y el entendimiento mutuo",
+        "image": "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=600&h=400&fit=crop",
+        "points": [
+          "Canales de comunicación claros",
+          "Feedback constructivo y regular",
+          "Escucha activa y empática",
+          "Gestión de malentendidos"
+        ],
+        "color": "blue"
+      },
+      {
+        "id": "toma-decisiones",
+        "icon": "🎯",
+        "title": "Toma de Decisiones Grupales",
+        "description": "Métodos y procesos para alcanzar consensos y tomar decisiones efectivas en equipo",
+        "image": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop",
+        "points": [
+          "Técnicas de brainstorming efectivo",
+          "Evaluación de alternativas en grupo",
+          "Consenso vs. votación mayoritaria",
+          "Implementación de decisiones grupales"
+        ],
+        "color": "purple"
+      }
+    ],
+    "statistics": [
+      {
+        "value": "84%",
+        "label": "Mejora en productividad grupal",
+        "color": "green"
+      },
+      {
+        "value": "91%",
+        "label": "Reducción de conflictos internos",
+        "color": "blue"
+      },
+      {
+        "value": "76%",
+        "label": "Mayor satisfacción laboral",
+        "color": "purple"
+      },
+      {
+        "value": "88%",
+        "label": "Mejora en comunicación",
+        "color": "orange"
+      }
+    ],
+    "methodology": {
+      "title": "Proceso de Optimización Grupal",
+      "steps": [
+        {
+          "icon": "🔍",
+          "title": "Diagnóstico Grupal",
+          "description": "Evaluación de dinámicas actuales y identificación de áreas de mejora",
+          "color": "blue"
+        },
+        {
+          "icon": "🛠️",
+          "title": "Intervención Dirigida",
+          "description": "Aplicación de técnicas específicas para mejorar la efectividad grupal",
+          "color": "green"
+        },
+        {
+          "icon": "📊",
+          "title": "Monitoreo y Ajuste",
+          "description": "Seguimiento continuo y refinamiento de los procesos grupales",
+          "color": "purple"
+        }
+      ]
+    },
+    "callToAction": {
+      "title": "¿Preparado para potenciar tu equipo?",
+      "description": "Descubre cómo las dinámicas grupales pueden transformar la efectividad y satisfacción de tu equipo de trabajo",
+      "buttonText": "Evaluar Dinámicas de mi Equipo"
+    }
+  }
+}
