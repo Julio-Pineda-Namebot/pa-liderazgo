@@ -1,9 +1,27 @@
 ---
-const { title, description, imageUrl } = Astro.props;
-import AnimatedBackground from "@components/layout/AnimatedBackground.astro";
+const { title, description, imageUrl, themeConfig } = Astro.props
+import AnimatedBackground from "@components/layout/AnimatedBackground.astro"
+
+// Import content configuration
+let contentConfig
+try {
+  // Try to use custom theme config if provided
+  if (themeConfig) {
+    contentConfig = themeConfig
+  } else {
+    // Fall back to default config
+    contentConfig = await import("../../data/content-config.json")
+  }
+} catch (error) {
+  console.error("Error loading content config:", error)
+  // Fallback to default if there's an error
+  contentConfig = await import("../../data/content-config.json")
+}
+
+const { heroContent, mainContent } = contentConfig
 ---
 
-<div class="w-full min-h-screen">
+<div class="w-full min-h-screen relative">
   <AnimatedBackground />
 
   {/* Header Section */}
@@ -14,18 +32,24 @@ import AnimatedBackground from "@components/layout/AnimatedBackground.astro";
       <h1 class="font-bold text-3xl md:text-6xl mb-6">{title}</h1>
       <p class="text-lg md:text-1xl mb-12 max-w-3xl">{description}</p>
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl">
-        <div>
-          <h3 class="font-semibold mb-2">Project Type</h3>
-          <p>Full Build</p>
-        </div>
-        <div>
-          <h3 class="font-semibold mb-2">Stage</h3>
-          <p>Startup</p>
-        </div>
-        <div>
-          <h3 class="font-semibold mb-2">Deliverables</h3>
-          <p>Product Design, Engineering, Website, Brand</p>
-        </div>
+        {
+          heroContent.features.map((feature, index) => (
+            <div
+              class={`hero-feature-card bg-black/20 backdrop-blur-sm rounded-lg p-6 border border-white/10 transform transition-all duration-700 hover:scale-105 hover:bg-black/30`}
+              data-delay={index * 200}
+            >
+              <h3
+                class={`font-semibold mb-3 text-${feature.color}-300 flex items-center gap-2`}
+              >
+                <span class="text-2xl">{feature.icon}</span>
+                {feature.title}
+              </h3>
+              <p class="text-sm leading-relaxed text-gray-300">
+                {feature.description}
+              </p>
+            </div>
+          ))
+        }
       </div>
     </div>
     <div class="min-h-[58.2vw] min-w-[58.2vw]">
@@ -41,36 +65,435 @@ import AnimatedBackground from "@components/layout/AnimatedBackground.astro";
     </div>
   </section>
 
-  {/* Contenido */}
-  <section class="px-6 md:px-16">
-    <h2 class="text-2xl md:text-4xl font-bold mb-6">Introduction</h2>
-    <p class="text-lg md:text-2xl max-w-3xl">
-      Aquí puedes poner la introducción o el contenido principal de tu sección
-      siguiente, separado visualmente del hero.
-    </p>
+  {/* Contenido Principal */}
+  <section
+    id="content-container"
+    class="px-6 md:px-16 pb-12 text-white opacity-0"
+  >
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+        >
+          {mainContent.title}
+        </h2>
+        <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          {mainContent.subtitle}
+        </p>
+      </div>
+
+      {/* Cards Principales con Imágenes */}
+      <div class="space-y-20 mb-20">
+        {
+          mainContent.conceptCards.map((card, index) => (
+            <div
+              class={`concept-card flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center opacity-0 transform translate-y-20`}
+              data-card-id={card.id}
+            >
+              {/* Imagen */}
+              <div class="lg:w-1/2">
+                <div class="relative overflow-hidden rounded-2xl shadow-2xl group">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div class="absolute bottom-6 left-6">
+                    <span class="text-4xl">{card.icon}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contenido */}
+              <div class="lg:w-1/2 space-y-6">
+                <div>
+                  <h3
+                    class={`text-2xl md:text-3xl font-bold mb-4 text-${card.color}-300`}
+                  >
+                    {card.title}
+                  </h3>
+                  <p class="text-lg text-gray-300 leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
+
+                <div class="space-y-3">
+                  {card.points.map((point, pointIndex) => (
+                    <div
+                      class={`point-item flex items-center gap-3 opacity-0 transform translate-x-10`}
+                      data-point-delay={pointIndex * 100}
+                    >
+                      <div
+                        class={`w-2 h-2 rounded-full bg-${card.color}-400`}
+                      />
+                      <span class="text-gray-300">{point}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  class={`mt-6 px-8 py-3 bg-gradient-to-r from-${card.color}-600 to-${card.color}-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-${card.color}-500/25 transition-all duration-300 transform hover:scale-105`}
+                >
+                  Explorar Más
+                </button>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      {/* Estadísticas Animadas */}
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        {
+          mainContent.statistics.map((stat, index) => (
+            <div
+              class={`stat-card text-center bg-black/20 backdrop-blur-sm rounded-xl p-8 border border-white/10 transform transition-all duration-700 hover:scale-105 opacity-0 translate-y-10`}
+              data-stat-delay={index * 150}
+            >
+              <div
+                class={`stat-number text-4xl md:text-5xl font-bold text-${stat.color}-400 mb-3`}
+              >
+                {stat.value}
+              </div>
+              <div class="text-sm text-gray-300 leading-tight">
+                {stat.label}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      {/* Metodología con Timeline Visual */}
+      <div
+        class="bg-gradient-to-r from-purple-900/20 to-blue-900/20 rounded-3xl p-8 md:p-12 mb-20 border border-white/10 methodology-section opacity-0"
+      >
+        <h3
+          class="text-3xl md:text-4xl font-bold mb-12 text-center text-purple-300"
+        >
+          {mainContent.methodology.title}
+        </h3>
+
+        <div class="relative">
+          {/* Timeline Line */}
+          <div
+            class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 rounded-full transform -translate-y-1/2 timeline-line"
+          >
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8 relative z-10">
+            {
+              mainContent.methodology.steps.map((step, index) => (
+                <div
+                  class={`method-step text-center transform transition-all duration-700 opacity-0 translate-y-10`}
+                  data-step-delay={index * 200}
+                >
+                  <div
+                    class={`w-20 h-20 bg-gradient-to-br from-${step.color}-500 to-${step.color}-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-${step.color}-500/30 hover:shadow-xl hover:shadow-${step.color}-500/50 transition-shadow duration-300`}
+                  >
+                    <span class="text-3xl">{step.icon}</span>
+                  </div>
+                  <h4 class="text-xl font-semibold mb-3 text-white">
+                    {step.title}
+                  </h4>
+                  <p class="text-gray-300 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      {/* Call to Action Mejorado */}
+      <div class="text-center cta-section opacity-0">
+        <div
+          class="inline-block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl p-8 md:p-12 max-w-4xl shadow-2xl"
+        >
+          <h3 class="text-2xl md:text-3xl font-bold mb-4 text-white">
+            {mainContent.callToAction.title}
+          </h3>
+          <p class="text-gray-200 mb-8 text-lg leading-relaxed">
+            {mainContent.callToAction.description}
+          </p>
+          <button
+            class="bg-white text-purple-900 px-10 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+          >
+            {mainContent.callToAction.buttonText}
+          </button>
+        </div>
+      </div>
+    </div>
   </section>
 </div>
 
 <script>
-  import gsap from "gsap";
+  import gsap from "gsap"
+  import { ScrollTrigger } from "gsap/ScrollTrigger"
 
   document.addEventListener("astro:page-load", () => {
-    const mainImage = document.getElementById("proyecto-imagen-principal");
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger)
+
+    // Initial hero image animation
+    const mainImage = document.getElementById("proyecto-imagen-principal")
     if (mainImage) {
       setTimeout(() => {
         gsap.to(mainImage, {
-          y: 390,
+          y: 450,
           duration: 1.2,
-          ease: "power2.out",
-        });
+          ease: "power2.out"
+        })
 
-        const contentContainer = document.getElementById("content-container");
+        // Animate hero feature cards
+        gsap.fromTo(
+          ".hero-feature-card",
+          {
+            opacity: 0,
+            y: 50,
+            scale: 0.9
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            stagger: 0.2
+          }
+        )
+
+        // Show main content
+        const contentContainer = document.getElementById("content-container")
         gsap.to(contentContainer, {
           opacity: 1,
           duration: 1.2,
-          ease: "power2.out",
-        });
-      }, 1000);
+          ease: "power2.out"
+        })
+      }, 1000)
     }
-  });
+
+    // Animate concept cards on scroll
+    const conceptCards = document.querySelectorAll(".concept-card")
+    conceptCards.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          y: 100,
+          x: index % 2 === 0 ? -50 : 50
+        },
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animate points within each card
+      const points = card.querySelectorAll(".point-item")
+      points.forEach((point, pointIndex) => {
+        gsap.fromTo(
+          point,
+          {
+            opacity: 0,
+            x: 50
+          },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+            delay: pointIndex * 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 70%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        )
+      })
+    })
+
+    // Animate statistics
+    const statCards = document.querySelectorAll(".stat-card")
+    statCards.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.8
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          delay: index * 0.1,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animate the number counting effect
+      const numberElement = card.querySelector(".stat-number")
+      if (numberElement) {
+        const finalValue = numberElement.textContent
+        const numericValue = parseInt(finalValue.replace("%", ""))
+
+        gsap.fromTo(
+          numberElement,
+          {
+            textContent: 0
+          },
+          {
+            textContent: numericValue,
+            duration: 2,
+            ease: "power2.out",
+            snap: { textContent: 1 },
+            modifiers: {
+              textContent: value =>
+                Math.round(value) + (finalValue.includes("%") ? "%" : "")
+            },
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        )
+      }
+    })
+
+    // Animate methodology section
+    const methodologySection = document.querySelector(".methodology-section")
+    if (methodologySection) {
+      gsap.fromTo(
+        methodologySection,
+        {
+          opacity: 0,
+          y: 80
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: methodologySection,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animate timeline line
+      const timelineLine = document.querySelector(".timeline-line")
+      if (timelineLine) {
+        gsap.fromTo(
+          timelineLine,
+          {
+            scaleX: 0
+          },
+          {
+            scaleX: 1,
+            duration: 1.5,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: methodologySection,
+              start: "top 70%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        )
+      }
+
+      // Animate method steps
+      const methodSteps = document.querySelectorAll(".method-step")
+      methodSteps.forEach((step, index) => {
+        gsap.fromTo(
+          step,
+          {
+            opacity: 0,
+            y: 60,
+            scale: 0.8
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            delay: index * 0.2,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: methodologySection,
+              start: "top 70%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        )
+      })
+    }
+
+    // Animate call-to-action
+    const ctaSection = document.querySelector(".cta-section")
+    if (ctaSection) {
+      gsap.fromTo(
+        ctaSection,
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.9
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: ctaSection,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+    }
+
+    // Add hover effects for interactive elements
+    const interactiveCards = document.querySelectorAll(
+      ".concept-card, .stat-card, .method-step"
+    )
+    interactiveCards.forEach(card => {
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          scale: 1.05,
+          duration: 0.3,
+          ease: "power2.out"
+        })
+      })
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        })
+      })
+    })
+  })
 </script>

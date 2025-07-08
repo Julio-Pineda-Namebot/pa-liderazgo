@@ -1,0 +1,123 @@
+{
+  "tema": "Estilos de Liderazgo",
+  "heroContent": {
+    "features": [
+      {
+        "icon": "👔",
+        "title": "Liderazgo Autocrático",
+        "description": "Toma de decisiones centralizada y control directo sobre el equipo",
+        "color": "red"
+      },
+      {
+        "icon": "🤝",
+        "title": "Liderazgo Democrático",
+        "description": "Participación activa del equipo en la toma de decisiones",
+        "color": "blue"
+      },
+      {
+        "icon": "🎯",
+        "title": "Liderazgo Situacional",
+        "description": "Adaptación del estilo según las necesidades del momento",
+        "color": "green"
+      }
+    ]
+  },
+  "mainContent": {
+    "title": "Estilos de Liderazgo",
+    "subtitle": "Descubre los diferentes enfoques de liderazgo y cuándo aplicar cada uno para maximizar el potencial de tu equipo",
+    "conceptCards": [
+      {
+        "id": "autocrático",
+        "icon": "⚡",
+        "title": "Liderazgo Autocrático",
+        "description": "Estilo de liderazgo donde el líder toma todas las decisiones importantes sin consultar al equipo",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+        "points": [
+          "Toma de decisiones rápida y eficiente",
+          "Control total sobre procesos y resultados",
+          "Ideal para situaciones de crisis",
+          "Puede reducir la creatividad del equipo"
+        ],
+        "color": "red"
+      },
+      {
+        "id": "democrático",
+        "icon": "🗳️",
+        "title": "Liderazgo Democrático",
+        "description": "Enfoque colaborativo que involucra al equipo en la toma de decisiones y fomenta la participación",
+        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+        "points": [
+          "Fomenta la participación y el compromiso",
+          "Mejora la moral y satisfacción del equipo",
+          "Decisiones más consensuadas y aceptadas",
+          "Puede ser más lento en la toma de decisiones"
+        ],
+        "color": "blue"
+      },
+      {
+        "id": "situacional",
+        "icon": "🎭",
+        "title": "Liderazgo Situacional",
+        "description": "Adaptación flexible del estilo de liderazgo según las circunstancias, equipo y objetivos",
+        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+        "points": [
+          "Máxima flexibilidad y adaptación",
+          "Respuesta óptima a diferentes situaciones",
+          "Desarrollo personalizado del equipo",
+          "Requiere alta competencia del líder"
+        ],
+        "color": "purple"
+      }
+    ],
+    "statistics": [
+      {
+        "value": "73%",
+        "label": "De los líderes usan múltiples estilos",
+        "color": "blue"
+      },
+      {
+        "value": "89%",
+        "label": "Prefieren liderazgo democrático",
+        "color": "green"
+      },
+      {
+        "value": "65%",
+        "label": "Mayor productividad con estilo situacional",
+        "color": "purple"
+      },
+      {
+        "value": "92%",
+        "label": "Mejora en retención de talento",
+        "color": "orange"
+      }
+    ],
+    "methodology": {
+      "title": "Proceso de Desarrollo del Liderazgo",
+      "steps": [
+        {
+          "icon": "🔍",
+          "title": "Autoconocimiento",
+          "description": "Identificación del estilo natural y fortalezas personales",
+          "color": "blue"
+        },
+        {
+          "icon": "🎯",
+          "title": "Práctica Dirigida",
+          "description": "Aplicación de diferentes estilos en situaciones controladas",
+          "color": "green"
+        },
+        {
+          "icon": "🚀",
+          "title": "Adaptación Flexible",
+          "description": "Desarrollo de la capacidad de cambiar de estilo según la situación",
+          "color": "purple"
+        }
+      ]
+    },
+    "callToAction": {
+      "title": "¿Listo para descubrir tu estilo de liderazgo?",
+      "description": "Explora cada enfoque y aprende cuándo y cómo aplicar el estilo más efectivo para cada situación",
+      "buttonText": "Realizar Test de Liderazgo"
+    }
+  }
+}
