@@ -1,10 +1,9 @@
-// @ts-check
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
 import react from '@astrojs/react';
+import vercel from '@astrojs/vercel';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,4 +20,5 @@ export default defineConfig({
   },
 
   integrations: [react()],
+  adapter: vercel(),
 });
