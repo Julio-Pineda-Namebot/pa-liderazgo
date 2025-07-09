@@ -4,6 +4,8 @@ import { DOMManager } from "@script/utils/dom"
 import { PROJECTS_CONFIG, DEFAULT_BRAND_NAME } from "@script/config/projects"
 import gsap from "gsap"
 import { setupSlideGsap } from "@script/utils/slideGsap"
+import { HeaderGsap } from "@script/portafolofio/header"
+import { ProjectImagesGsap } from "@script/portafolofio/projectImages"
 
 export class PortfolioManager {
   constructor() {
@@ -20,6 +22,8 @@ export class PortfolioManager {
     this.setupInitialAnimations()
     this.setupEventListeners()
     setupSlideGsap()
+    HeaderGsap()
+    ProjectImagesGsap()
   }
 
   setupClock() {
@@ -32,14 +36,8 @@ export class PortfolioManager {
 
   setupEventListeners() {
     DOMManager.setupProjectEventListeners(
-      // this.projects,
       projectId => this.handleProjectHover(projectId),
       () => this.handleProjectLeave()
-      // (projectId, projects) => {
-      //   if (projects[projectId]) {
-      //     window.location.href = projects[projectId].url
-      //   }
-      // }
     )
   }
 

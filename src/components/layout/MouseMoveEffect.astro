@@ -1,0 +1,54 @@
+---
+// MouseMoveEffect.astro
+---
+
+<div id="mouse-effect" class="mouse-move-effect"></div>
+
+<script>
+  class MouseMoveEffect {
+    private mousePosition = { x: 0, y: 0 };
+    private effectElement: HTMLElement | null = null;
+
+    constructor() {
+      this.effectElement = document.getElementById('mouse-effect');
+      this.init();
+    }
+
+    private init() {
+      if (!this.effectElement) return;
+
+      document.addEventListener('mousemove', (event: MouseEvent) => {
+        this.mousePosition = { x: event.clientX, y: event.clientY };
+        this.updateEffect();
+      });
+    }
+
+    private updateEffect() {
+      if (!this.effectElement) return;
+
+      const { x, y } = this.mousePosition;
+      
+      this.effectElement.style.background = 
+        `radial-gradient(600px at ${x}px ${y}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new MouseMoveEffect();
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    new MouseMoveEffect();
+  });
+</script>
+
+<style>
+  .mouse-move-effect {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    transition: opacity 300ms;
+    background: radial-gradient(600px at 50% 50%, rgba(29, 78, 216, 0.15), transparent 80%);
+  }
+</style>

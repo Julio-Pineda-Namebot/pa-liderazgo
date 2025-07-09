@@ -1,0 +1,88 @@
+---
+// MouseTrail.astro - Efecto adicional de rastro del mouse (opcional)
+---
+
+<div id="mouse-trail"></div>
+
+<script>
+  class MouseTrail {
+    private trail: Array<{x: number, y: number, id: number}> = [];
+    private trailContainer: HTMLElement | null = null;
+
+    constructor() {
+      this.trailContainer = document.getElementById('mouse-trail');
+      this.init();
+    }
+
+    private init() {
+      if (!this.trailContainer) return;
+
+      document.addEventListener('mousemove', (event: MouseEvent) => {
+        this.addTrailPoint(event.clientX, event.clientY);
+      });
+    }
+
+    private addTrailPoint(x: number, y: number) {
+      const point = { x, y, id: Date.now() };
+      this.trail.unshift(point);
+      
+      // Mantener solo los últimos 10 puntos
+      if (this.trail.length > 10) {
+        this.trail = this.trail.slice(0, 10);
+      }
+
+      this.renderTrail();
+    }
+
+    private renderTrail() {
+      if (!this.trailContainer) return;
+
+      this.trailContainer.innerHTML = '';
+
+      this.trail.forEach((point, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'trail-dot';
+        dot.style.left = `${point.x}px`;
+        dot.style.top = `${point.y}px`;
+        dot.style.opacity = `${1 - (index * 0.1)}`;
+        dot.style.transform = `translate(-50%, -50%) scale(${1 - (index * 0.1)})`;
+        
+        this.trailContainer.appendChild(dot);
+
+        // Remover el punto después de la animación
+        setTimeout(() => {
+          if (dot.parentNode) {
+            dot.parentNode.removeChild(dot);
+          }
+        }, 500);
+      });
+    }
+  }
+
+  // Inicializar el rastro del mouse
+  document.addEventListener('DOMContentLoaded', () => {
+    new MouseTrail();
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    new MouseTrail();
+  });
+</script>
+
+<style>
+  #mouse-trail {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+  }
+
+  .trail-dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 50%;
+    transition: all 0.5s ease-out;
+  }
+</style>

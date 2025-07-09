@@ -1,29 +1,33 @@
 ---
-const { title, description, imageUrl, themeConfig } = Astro.props
-import AnimatedBackground from "@components/layout/AnimatedBackground.astro"
+const { title, description, imageUrl, themeConfig } = Astro.props;
+import BackgroundEffects from "@components/layout/BackgroundEffects.astro";
+import MouseMoveEffect from "@components/layout/MouseMoveEffect.astro";
+import MouseTrail from "@components/layout/MouseTrail.astro";
 
 // Import content configuration
-let contentConfig
+let contentConfig;
 try {
   // Try to use custom theme config if provided
   if (themeConfig) {
-    contentConfig = themeConfig
+    contentConfig = themeConfig;
   } else {
     // Fall back to default config
-    contentConfig = await import("../../data/content-config.json")
+    contentConfig = await import("../../data/content-config.json");
   }
 } catch (error) {
-  console.error("Error loading content config:", error)
+  console.error("Error loading content config:", error);
   // Fallback to default if there's an error
-  contentConfig = await import("../../data/content-config.json")
+  contentConfig = await import("../../data/content-config.json");
 }
 
-const { heroContent, mainContent } = contentConfig
+const { heroContent, mainContent } = contentConfig;
 ---
 
 <div class="w-full min-h-screen relative">
-  <AnimatedBackground />
-
+  <BackgroundEffects />
+  <MouseMoveEffect />
+  <MouseTrail />
+  
   {/* Header Section */}
   <section
     class="relative z-10 text-white px-6 md:px-16 pt-24 pb-12 min-h-screen mb-20"
@@ -71,7 +75,7 @@ const { heroContent, mainContent } = contentConfig
     class="px-6 md:px-16 pb-12 text-white opacity-0"
   >
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16 relative z-10">
         <h2
           class="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
         >
@@ -229,22 +233,22 @@ const { heroContent, mainContent } = contentConfig
 </div>
 
 <script>
-  import gsap from "gsap"
-  import { ScrollTrigger } from "gsap/ScrollTrigger"
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   document.addEventListener("astro:page-load", () => {
     // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger);
 
     // Initial hero image animation
-    const mainImage = document.getElementById("proyecto-imagen-principal")
+    const mainImage = document.getElementById("proyecto-imagen-principal");
     if (mainImage) {
       setTimeout(() => {
         gsap.to(mainImage, {
           y: 450,
           duration: 1.2,
-          ease: "power2.out"
-        })
+          ease: "power2.out",
+        });
 
         // Animate hero feature cards
         gsap.fromTo(
@@ -252,7 +256,7 @@ const { heroContent, mainContent } = contentConfig
           {
             opacity: 0,
             y: 50,
-            scale: 0.9
+            scale: 0.9,
           },
           {
             opacity: 1,
@@ -260,29 +264,29 @@ const { heroContent, mainContent } = contentConfig
             scale: 1,
             duration: 0.8,
             ease: "power2.out",
-            stagger: 0.2
-          }
-        )
+            stagger: 0.2,
+          },
+        );
 
         // Show main content
-        const contentContainer = document.getElementById("content-container")
+        const contentContainer = document.getElementById("content-container");
         gsap.to(contentContainer, {
           opacity: 1,
           duration: 1.2,
-          ease: "power2.out"
-        })
-      }, 1000)
+          ease: "power2.out",
+        });
+      }, 1000);
     }
 
     // Animate concept cards on scroll
-    const conceptCards = document.querySelectorAll(".concept-card")
+    const conceptCards = document.querySelectorAll(".concept-card");
     conceptCards.forEach((card, index) => {
       gsap.fromTo(
         card,
         {
           opacity: 0,
           y: 100,
-          x: index % 2 === 0 ? -50 : 50
+          x: index % 2 === 0 ? -50 : 50,
         },
         {
           opacity: 1,
@@ -294,19 +298,19 @@ const { heroContent, mainContent } = contentConfig
             trigger: card,
             start: "top 80%",
             end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      )
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
 
       // Animate points within each card
-      const points = card.querySelectorAll(".point-item")
+      const points = card.querySelectorAll(".point-item");
       points.forEach((point, pointIndex) => {
         gsap.fromTo(
           point,
           {
             opacity: 0,
-            x: 50
+            x: 50,
           },
           {
             opacity: 1,
@@ -317,22 +321,22 @@ const { heroContent, mainContent } = contentConfig
             scrollTrigger: {
               trigger: card,
               start: "top 70%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        )
-      })
-    })
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
+    });
 
     // Animate statistics
-    const statCards = document.querySelectorAll(".stat-card")
+    const statCards = document.querySelectorAll(".stat-card");
     statCards.forEach((card, index) => {
       gsap.fromTo(
         card,
         {
           opacity: 0,
           y: 50,
-          scale: 0.8
+          scale: 0.8,
         },
         {
           opacity: 1,
@@ -344,21 +348,21 @@ const { heroContent, mainContent } = contentConfig
           scrollTrigger: {
             trigger: card,
             start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      )
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
 
       // Animate the number counting effect
-      const numberElement = card.querySelector(".stat-number")
+      const numberElement = card.querySelector(".stat-number");
       if (numberElement) {
-        const finalValue = numberElement.textContent
-        const numericValue = parseInt(finalValue.replace("%", ""))
+        const finalValue = numberElement.textContent;
+        const numericValue = parseInt(finalValue.replace("%", ""));
 
         gsap.fromTo(
           numberElement,
           {
-            textContent: 0
+            textContent: 0,
           },
           {
             textContent: numericValue,
@@ -366,27 +370,27 @@ const { heroContent, mainContent } = contentConfig
             ease: "power2.out",
             snap: { textContent: 1 },
             modifiers: {
-              textContent: value =>
-                Math.round(value) + (finalValue.includes("%") ? "%" : "")
+              textContent: (value) =>
+                Math.round(value) + (finalValue.includes("%") ? "%" : ""),
             },
             scrollTrigger: {
               trigger: card,
               start: "top 85%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        )
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
       }
-    })
+    });
 
     // Animate methodology section
-    const methodologySection = document.querySelector(".methodology-section")
+    const methodologySection = document.querySelector(".methodology-section");
     if (methodologySection) {
       gsap.fromTo(
         methodologySection,
         {
           opacity: 0,
-          y: 80
+          y: 80,
         },
         {
           opacity: 1,
@@ -396,18 +400,18 @@ const { heroContent, mainContent } = contentConfig
           scrollTrigger: {
             trigger: methodologySection,
             start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      )
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
 
       // Animate timeline line
-      const timelineLine = document.querySelector(".timeline-line")
+      const timelineLine = document.querySelector(".timeline-line");
       if (timelineLine) {
         gsap.fromTo(
           timelineLine,
           {
-            scaleX: 0
+            scaleX: 0,
           },
           {
             scaleX: 1,
@@ -416,21 +420,21 @@ const { heroContent, mainContent } = contentConfig
             scrollTrigger: {
               trigger: methodologySection,
               start: "top 70%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        )
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
       }
 
       // Animate method steps
-      const methodSteps = document.querySelectorAll(".method-step")
+      const methodSteps = document.querySelectorAll(".method-step");
       methodSteps.forEach((step, index) => {
         gsap.fromTo(
           step,
           {
             opacity: 0,
             y: 60,
-            scale: 0.8
+            scale: 0.8,
           },
           {
             opacity: 1,
@@ -442,22 +446,22 @@ const { heroContent, mainContent } = contentConfig
             scrollTrigger: {
               trigger: methodologySection,
               start: "top 70%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        )
-      })
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
+      });
     }
 
     // Animate call-to-action
-    const ctaSection = document.querySelector(".cta-section")
+    const ctaSection = document.querySelector(".cta-section");
     if (ctaSection) {
       gsap.fromTo(
         ctaSection,
         {
           opacity: 0,
           y: 50,
-          scale: 0.9
+          scale: 0.9,
         },
         {
           opacity: 1,
@@ -468,32 +472,32 @@ const { heroContent, mainContent } = contentConfig
           scrollTrigger: {
             trigger: ctaSection,
             start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      )
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
     }
 
     // Add hover effects for interactive elements
     const interactiveCards = document.querySelectorAll(
-      ".concept-card, .stat-card, .method-step"
-    )
-    interactiveCards.forEach(card => {
+      ".concept-card, .stat-card, .method-step",
+    );
+    interactiveCards.forEach((card) => {
       card.addEventListener("mouseenter", () => {
         gsap.to(card, {
           scale: 1.05,
           duration: 0.3,
-          ease: "power2.out"
-        })
-      })
+          ease: "power2.out",
+        });
+      });
 
       card.addEventListener("mouseleave", () => {
         gsap.to(card, {
           scale: 1,
           duration: 0.3,
-          ease: "power2.out"
-        })
-      })
-    })
-  })
+          ease: "power2.out",
+        });
+      });
+    });
+  });
 </script>
