@@ -23,6 +23,7 @@ export class AnimationManager {
 
     // Muestra el estado inicial (pantalla de bienvenida)
     gsap.set("#initial-state", { opacity: 1 })
+    gsap.set("#student-container", { opacity: 1 });
   }
 
   /**
@@ -74,6 +75,7 @@ export class AnimationManager {
   showProjectAnimation(projectId, onComplete) {
     // Oculta inmediatamente el estado inicial
     gsap.set("#initial-state", { opacity: 0 })
+    gsap.set("#student-container", { opacity: 0 });
 
     // Crea una nueva timeline (secuencia de animaciones) de GSAP
     const tl = gsap.timeline({
@@ -180,5 +182,59 @@ export class AnimationManager {
         },
         "-=0.1" // Empieza 100ms antes de que termine la animación anterior
       )
+  }
+
+  /**
+ * Muestra la vista de estudiantes con animación
+ */
+  showStudentView() {
+    // Asegura que esté visible antes de animar
+    gsap.set("#student-container", { display: "flex" });
+    gsap.set("#initial-state", { opacity: 0 });
+
+    gsap.fromTo(
+      "#student-container",
+      { opacity: 0, y: 30, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.45,
+        ease: "power2.out"
+      }
+    );
+  }
+
+  /**
+   * Oculta la vista de estudiantes con animación y vuelve al estado inicial
+   */
+  hideStudentView() {
+    const tl = gsap.timeline();
+
+    // 1. Animar salida del contenedor de estudiantes
+    tl.to("#student-container", {
+      opacity: 0,
+      y: 40,
+      scale: 0.95,
+      duration: 0.4,
+      ease: "power2.inOut",
+    });
+
+    // 2. Ocultar completamente al terminar
+    tl.set("#student-container", { display: "none" });
+
+    // 3. Mostrar el video suavemente
+    tl.fromTo(
+      "#initial-state",
+      { opacity: 0, scale: 0.95, y: 20 },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.45,
+        ease: "power2.out"
+      },
+      "+=0.1" // Le damos un pequeño respiro entre transiciones
+    );
   }
 }

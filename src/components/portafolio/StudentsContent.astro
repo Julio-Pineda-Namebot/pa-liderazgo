@@ -1,0 +1,94 @@
+---
+import students from "@data/students.json";
+let activeIndex = 0;
+---
+
+<div
+  class="absolute inset-0 flex-col w-full h-full z-40 hidden"
+  id="student-container"
+>
+  <div class="slides-container">
+    <div class="slides-inner">
+      {
+        students.map((student, idx) => (
+          <div
+            class={`slide${idx === activeIndex ? " active" : ""}${idx === activeIndex + 1 ? " next" : ""}`}
+          >
+            <div class="card flex flex-col items-center gap-4 p-4 bg-white/10 backdrop-blur-md rounded-lg shadow-md w-[90%] mx-auto max-w-3xl text-white">
+              {/* <!-- VIDEO HEADER --> */}
+              <div
+                class="relative w-full max-h-[300px] aspect-video rounded-lg overflow-hidden cursor-pointer group"
+                onclick={`openVideoModal('${student.videoUrl}')`}
+              >
+                <video
+                  class="w-full h-full object-cover pointer-events-none"
+                  preload="metadata"
+                  poster="/images/posterVideo.jpg"
+                  muted
+                >
+                  <source src={student.videoUrl} type="video/mp4" />
+                </video>
+
+                <button class="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/50 transition">
+                  <div class="bg-white/80 hover:bg-white rounded-full p-6 transition">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-10 w-10 text-black"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14.752 11.168l-5.197-3.023A1 1 0 008 9.028v5.944a1 1 0 001.555.832l5.197-3.023a1 1 0 000-1.712z"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+
+              {/* <!-- INFORMACIÓN DEL ESTUDIANTE --> */}
+              <div class="w-full text-left space-y-2">
+                <h2 class="text-2xl font-bold">
+                  {student.nombres} {student.apellidos}
+                </h2>
+                <p>
+                  <strong>Ciclo:</strong> {student.ciclo}
+                </p>
+                <p>
+                  <strong>Código UTP:</strong> {student.codigoUTP}
+                </p>
+                <p>
+                  <strong>Carrera:</strong> {student.carrera}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="video-modal" class="fixed inset-0 z-100 bg-black/80 hidden">
+  <div class="relative w-full max-w-5xl p-4 flex flex-col items-center">
+    <button
+      id="close-modal"
+      class="absolute top-4 right-4 bg-gray-200/60 text-black rounded-full w-9 h-9 flex items-center justify-center text-xl hover:bg-white hover:shadow-md transition z-101 backdrop-blur"
+    >
+      ✕
+    </button>
+
+    <video
+      id="modal-video"
+      class="w-full max-h-[80vh] rounded-lg"
+      controls
+      autoplay
+    >
+      <source src="" type="video/mp4" />
+    </video>
+  </div>
+</div>

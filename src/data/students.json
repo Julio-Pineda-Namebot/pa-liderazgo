@@ -4,41 +4,47 @@
     "apellidos": "Pineda Sanchez",
     "ciclo": "VII",
     "codigoUTP": "U22205882",
-    "carrera": "Ingeniería de Sistemas e Informática"
+    "carrera": "Ingeniería de Sistemas e Informática",
+    "videoUrl":"https://ia804502.us.archive.org/33/items/GoldenGa1939_3/GoldenGa1939_3_512kb.mp4"
   },
   {
     "nombres": "Renzo Eduardo",
     "apellidos": "Puppi Hurtado",
     "ciclo": "VII",
     "codigoUTP": "U22202157",
-    "carrera": "Ingeniería de Sistemas e Informática"
+    "carrera": "Ingeniería de Sistemas e Informática",
+    "videoUrl":""
   },
   {
     "nombres": "Mateo",
     "apellidos": "Rioja Portocarrero",
     "ciclo": "VII",
     "codigoUTP": "U22204709",
-    "carrera": "Ingeniería de Sistemas e Informática"
+    "carrera": "Ingeniería de Sistemas e Informática",
+    "videoUrl":""
   },
   {
     "nombres": "Diego Alessandro",
     "apellidos": "Ramirez Assereto",
     "ciclo": "VII",
     "codigoUTP": "U22202196",
-    "carrera": "Ingeniería de Sistemas e Informática"
+    "carrera": "Ingeniería de Sistemas e Informática",
+    "videoUrl":""
   },
   {
     "nombres": "Said",
     "apellidos": "Lopez Cangre",
     "ciclo": "VII",
     "codigoUTP": "U22205106",
-    "carrera": "Ingenieria de Sistemas e Informática"
+    "carrera": "Ingenieria de Sistemas e Informática",
+    "videoUrl":""
   },
   {
     "nombres": "Karelly",
     "apellidos": "Ore Paucas",
     "ciclo": "VII",
     "codigoUTP": "U21313569",
-    "carrera": "Ingenieria de Sistemas e Informática"
+    "carrera": "Ingenieria de Sistemas e Informática",
+    "videoUrl":""
   }
 ]

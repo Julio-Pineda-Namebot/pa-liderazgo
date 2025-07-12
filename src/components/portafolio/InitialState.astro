@@ -1,24 +1,51 @@
 ---
-import students from "@data/students.json";
-let activeIndex = 0;
+import StudentsContent from "@components/portafolio/StudentsContent.astro";
 ---
 
 <div
-    class="absolute inset-0 flex position-relative flex-col w-full h-full z-40"
-    id="initial-state"
+  class="relative flex items-center justify-center min-h-screen z-40"
+  id="initial-state"
 >
-    <div class="slides-container">
-        <div class="slides-inner">
-            {students.map((student, idx) => (
-            <div class={`slide${idx === activeIndex ? ' active' : ''}${idx === activeIndex + 1 ? ' next' : ''}`}>
-                <div class="card">
-                <h2>{student.nombres} {student.apellidos}</h2>
-                <p><strong>Ciclo:</strong> {student.ciclo}</p>
-                <p><strong>Código UTP:</strong> {student.codigoUTP}</p>
-                <p><strong>Carrera:</strong> {student.carrera}</p>
-                </div>
-            </div>
-            ))}
-        </div>
-    </div>
+  <div
+    id="video-poster-wrapper"
+    class="absolute inset-0 flex items-center justify-center rounded-md overflow-hidden cursor-pointer"
+  >
+    <img
+      src="/images/posterVideo.jpg"
+      alt="Poster del video"
+      class="w-[750px] h-[450px] object-cover rounded-md"
+    />
+    <button
+      id="play-button"
+      class="absolute text-white bg-white/70 hover:bg-white transition rounded-full p-6"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-10 w-10 text-black"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M14.752 11.168l-5.197-3.023A1 1 0 008 9.028v5.944a1 1 0 001.555.832l5.197-3.023a1 1 0 000-1.712z"
+        ></path>
+      </svg>
+    </button>
+  </div>
+
+  <video
+    id="video-element"
+    controls
+    class="rounded-md w-[750px] hidden"
+    poster="/images/posterVideo.jpg"
+  >
+    <source
+      src="https://ia804502.us.archive.org/33/items/GoldenGa1939_3/GoldenGa1939_3_512kb.mp4"
+      type="video/mp4"
+    />
+  </video>
 </div>
+<StudentsContent />
