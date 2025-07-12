@@ -3,9 +3,6 @@ import { AnimationManager } from "@script/utils/animations"
 import { DOMManager } from "@script/utils/dom"
 import { PROJECTS_CONFIG, DEFAULT_BRAND_NAME } from "@script/config/projects"
 import gsap from "gsap"
-import { setupSlideGsap } from "@script/utils/slideGsap"
-import { HeaderGsap } from "@script/portafolofio/header"
-import { ProjectImagesGsap } from "@script/portafolofio/projectImages"
 
 export class PortfolioManager {
   constructor() {
@@ -15,15 +12,14 @@ export class PortfolioManager {
     this.animationManager = new AnimationManager()
     this.hoverTimeout = null
     this.leaveTimeout = null
+    this.showingStudents = false;
   }
 
   init() {
     this.setupClock()
     this.setupInitialAnimations()
     this.setupEventListeners()
-    setupSlideGsap()
-    HeaderGsap()
-    ProjectImagesGsap()
+    this.setupViewTeamButton();
   }
 
   setupClock() {
@@ -83,6 +79,7 @@ export class PortfolioManager {
     DOMManager.updateBrandName(DEFAULT_BRAND_NAME)
 
     gsap.set("#initial-state", { opacity: 1 })
+    gsap.set("#student-container", { opacity: 1 });
   }
 
   showProject(projectId) {
@@ -108,6 +105,26 @@ export class PortfolioManager {
 
     this.animationManager.hideProjectAnimation(projectId, () => {
       gsap.set("#initial-state", { opacity: 1 })
+      gsap.set("#student-container", { opacity: 1 });
     })
   }
+
+  setupViewTeamButton() {
+    const viewTeamButton = document.getElementById("view-team-button");
+    if (!viewTeamButton) return;
+
+    viewTeamButton.addEventListener("click", () => {
+      this.showingStudents = !this.showingStudents;
+
+      if (this.showingStudents) {
+        this.killAllAnimations();
+        this.animationManager.showStudentView();
+        viewTeamButton.textContent = "Ver Video";
+      } else {
+        this.animationManager.hideStudentView();
+        viewTeamButton.textContent = "Ver Integrantes";
+      }
+    });
+  }
+
 }

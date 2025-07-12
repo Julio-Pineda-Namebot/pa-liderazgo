@@ -32,11 +32,6 @@ const { title } = Astro.props
 </style>
 
 <script>
-  import { PortfolioManager } from "@script/Portafolio-manager";
-
-  document.addEventListener("astro:page-load", () => {
-    // Inicializar el portfolio manager
-    const portfolioManager = new PortfolioManager();
-    portfolioManager.init();
-  });
+  import { initPortfolioApp } from "@script/PortafolioApp";
+  initPortfolioApp();
 </script>
