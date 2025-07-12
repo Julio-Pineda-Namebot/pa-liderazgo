@@ -126,17 +126,41 @@
 
 /* Gradientes de fondo para cada slide */
 .slide:nth-child(1) { 
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+  background: linear-gradient(135deg, #5C6BC0 0%, #8E24AA 100%);
+  /* Azul moderado → Púrpura */
 }
+
 .slide:nth-child(2) { 
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); 
+  background: linear-gradient(135deg, #3949AB 0%, #7E57C2 100%);
+  /* Azul oscuro → Lavanda fuerte */
 }
+
 .slide:nth-child(3) { 
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); 
+  background: linear-gradient(135deg, #3F51B5 0%, #9C27B0 100%);
+  /* Azul medio → Morado intenso */
 }
+
 .slide:nth-child(4) { 
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); 
+  background: linear-gradient(135deg, #7986CB 0%, #BA68C8 100%);
+  /* Azul lavanda → Violeta claro */
 }
+
 .slide:nth-child(5) { 
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); 
+  background: linear-gradient(135deg, #536DFE 0%, #AB47BC 100%);
+  /* Azul brillante → Magenta suave */
+}
+
+.slide:nth-child(6) { 
+  background: linear-gradient(135deg, #3D5AFE 0%, #8E24AA 100%);
+  /* Azul fuerte → Púrpura oscuro */
+}
+
+.slide:nth-child(7) { 
+  background: linear-gradient(135deg, #2196F3 0%, #7B1FA2 100%);
+  /* Azul puro → Púrpura vibrante */
+}
+
+.slide:nth-child(8) { 
+  background: linear-gradient(135deg, #64B5F6 0%, #9575CD 100%);
+  /* Celeste frío → Lavanda media */
 }
