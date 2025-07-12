@@ -46,7 +46,6 @@ export function setupInitialContent() {
           studentContainer.classList.add("hidden");
           studentContainer.classList.remove("flex");
           initialState?.classList.remove("hidden");
-          video?.play();
           viewTeamButton.textContent = "Ver Integrantes";
         }
       });
