@@ -4,69 +4,129 @@
     "features": [
       {
         "icon": "👔",
-        "title": "Liderazgo Autocrático",
-        "description": "Toma de decisiones centralizada y control directo sobre el equipo",
+        "title": "Liderazgo Coercitivo",
+        "description": "Toma de decisiones centralizada y control directo sobre el equipo.",
         "color": "red"
       },
       {
         "icon": "🤝",
-        "title": "Liderazgo Democrático",
-        "description": "Participación activa del equipo en la toma de decisiones",
+        "title": "Liderazgo Orientado a la Visión",
+        "description": "Enfocado en inspirar y motivar al presentar una visión clara del futuro.",
         "color": "blue"
       },
       {
         "icon": "🎯",
-        "title": "Liderazgo Situacional",
-        "description": "Adaptación del estilo según las necesidades del momento",
+        "title": "Liderazgo Afiliativo",
+        "description": "Se prioriza la creación de relaciones armoniosas y el bienestar del equipo.",
+        "color": "green"
+      },
+      {
+        "icon": "🤔",
+        "title": "Liderazgo Democrático",
+        "description": "Basado en involucrar al equipo en la toma de decisiones y fomentar la participación activa.",
+        "color": "green"
+      },
+      {
+        "icon": "🫵",
+        "title": "Liderazgo Ejemplar",
+        "description": "El líder predica con el ejemplo estableciendo altos estándares de desempeño.",
+        "color": "green"
+      },
+      {
+        "icon": "✍️",
+        "title": "Liderazgo Formativo",
+        "description": "Enfocado en desarrollar las habilidades y capacidades de los empleados a largo plazo.",
         "color": "green"
       }
     ]
   },
   "mainContent": {
     "title": "Estilos de Liderazgo",
-    "subtitle": "Descubre los diferentes enfoques de liderazgo y cuándo aplicar cada uno para maximizar el potencial de tu equipo",
+    "subtitle": "Descubre los diferentes enfoques de liderazgo y cuándo aplicar cada uno para maximizar el potencial de tu equipo:",
     "conceptCards": [
       {
-        "id": "autocrático",
-        "icon": "⚡",
-        "title": "Liderazgo Autocrático",
-        "description": "Estilo de liderazgo donde el líder toma todas las decisiones importantes sin consultar al equipo",
-        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+        "id": "coercitivo",
+        "icon": "🔒",
+        "title": "Liderazgo Coercitivo",
+        "description": "Se basa en el control estricto y la toma de decisiones unilaterales. El líder espera a que los demás sigan órdenes sin cuestionarlo.",
+        "image": "https://liderazgoempresarial.info/wp-content/uploads/estilo-de-liderazgo-coercitivo.jpg",
         "points": [
-          "Toma de decisiones rápida y eficiente",
-          "Control total sobre procesos y resultados",
-          "Ideal para situaciones de crisis",
-          "Puede reducir la creatividad del equipo"
+          "Permite tomar decisiones rápidas en situaciones críticas",
+          "Asegura el cumplimiento inmediato de órdenes y procedimientos",
+          "Minimiza la ambigüedad y los errores por instrucciones claras",
+          "Proporciona estructura y disciplina al equipo"
         ],
         "color": "red"
       },
       {
-        "id": "democrático",
-        "icon": "🗳️",
-        "title": "Liderazgo Democrático",
-        "description": "Enfoque colaborativo que involucra al equipo en la toma de decisiones y fomenta la participación",
-        "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+        "id": "visionario",
+        "icon": "🌟",
+        "title": "Liderazgo Orientado a la Visión",
+        "description": "Enfocado en inspirar y motivar al equipo presentando una visión clara del futuro. El líder comunica hacia dónde se dirige la empresa y genera compromiso al conectar el propósito del trabajo con metas personales.",
+        "image": "https://ahaslides.com/wp-content/uploads/2023/03/SEO2699-thumb.png",
         "points": [
-          "Fomenta la participación y el compromiso",
-          "Mejora la moral y satisfacción del equipo",
-          "Decisiones más consensuadas y aceptadas",
-          "Puede ser más lento en la toma de decisiones"
+          "Motiva al equipo al compartir una meta clara y atractiva",
+          "Fomenta el sentido de propósito y pertenencia",
+          "Facilita la alineación de esfuerzos hacia objetivos comunes",
+          "Impulsa la innovación y el crecimiento"
         ],
         "color": "blue"
       },
       {
-        "id": "situacional",
-        "icon": "🎭",
-        "title": "Liderazgo Situacional",
-        "description": "Adaptación flexible del estilo de liderazgo según las circunstancias, equipo y objetivos",
-        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+        "id": "afiliativo",
+        "icon": "💞",
+        "title": "Liderazgo Afiliativo",
+        "description": "Prioriza la creación de relaciones armoniosas y el bienestar del equipo. El líder se enfoca en fomentar un ambiente positivo y colaborativo, donde los miembros se sientan valorados y escuchados.",
+        "image": "https://martinalba.com/wp-content/uploads/2023/06/Marca-personal.png",
         "points": [
-          "Máxima flexibilidad y adaptación",
-          "Respuesta óptima a diferentes situaciones",
-          "Desarrollo personalizado del equipo",
-          "Requiere alta competencia del líder"
+          "Fomenta la confianza y el respeto entre los miembros del equipo",
+          "Mejora el clima laboral y la satisfacción personal",
+          "Reduce conflictos y promueve la colaboración",
+          "Ayuda a superar momentos difíciles o de tensión"
         ],
         "color": "purple"
+      },
+      {
+        "id": "democratico",
+        "icon": "🗳️",
+        "title": "Liderazgo Democrático",
+        "description": "Basado en involucrar al equipo en la toma de decisiones y fomentar la participación activa. El líder busca opiniones y consenso antes de tomar decisiones importantes.",
+        "image": "https://www.adecco.es/-/media/adeccogroup/brands/adecco-global-2016/spain/media/insights/que-es-liderazgo-democratico.jpg?h=2576&iar=0&w=3864&rev=44d8c5c3790a4eaa8596a3f3dda2fd5c&hash=0057E14C5FAD2C342F43C5DFD7186916",
+        "points": [
+          "Fomenta la participación y el compromiso de todo el equipo",
+          "Mejora la moral y satisfacción de los colaboradores",
+          "Las decisiones suelen ser más consensuadas y aceptadas",
+          "Promueve la creatividad y diversidad de ideas"
+        ],
+        "color": "green"
+      },
+      {
+        "id": "ejemplar",
+        "icon": "🔥",
+        "title": "Liderazgo Ejemplar",
+        "description": "El líder predica con el ejemplo estableciendo altos estándares de desempeño. Se espera que los miembros del equipo sigan el modelo del líder en cuanto a ética, trabajo y compromiso.",
+        "image": "https://media.licdn.com/dms/image/v2/D4E12AQE-VdOxQYIMow/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1685368984060?e=2147483647&v=beta&t=k2XJWNQyukbKHHR9brxCRrwEW9vgUJSybz-jNZDOgcQ",
+        "points": [
+          "Inspira a los miembros del equipo a alcanzar altos estándares",
+          "Promueve la ética y el compromiso profesional",
+          "Fomenta la responsabilidad y la autodisciplina",
+          "Sirve como modelo de conducta y trabajo"
+        ],
+        "color": "orange"
+      },
+      {
+        "id": "formativo",
+        "icon": "🎓",
+        "title": "Liderazgo Formativo",
+        "description": "Enfocado en desarrollar las habilidades y capacidades de los empleados a largo plazo. El líder actúa como mentor, brindando orientación y apoyo para el crecimiento profesional.",
+        "image": "https://blogs.funiber.org/wp-content/uploads/2017/08/funiber-liderazgo-formativo.jpg",
+        "points": [
+          "Desarrolla el potencial de cada miembro del equipo",
+          "Fomenta un ambiente de aprendizaje continuo",
+          "Ayuda a los empleados a alcanzar sus metas profesionales",
+          "Promueve la autonomía y el crecimiento personal"
+        ],
+        "color": "yellow"
       }
     ],
     "statistics": [
