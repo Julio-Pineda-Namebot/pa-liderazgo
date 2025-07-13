@@ -6,6 +6,7 @@ import { setupInitialContent } from "./portafolofio/initialContent";
 import { setupVideoModalEvents } from "./portafolofio/videoModal";
 
 export function initPortfolioApp() {
+  HeaderGsap()
   document.addEventListener("astro:page-load", () => {
     ProjectImagesGsap()
     const portfolioManager = new PortfolioManager();
