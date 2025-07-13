@@ -1,34 +1,35 @@
 ---
 const projects = [
     {
-        id: 'primero',
-        title: 'Lorem ipsum dolor sit amet.',
-        description: 'Lorem ipsum dolor sit amet.'
+        id: "primero",
+        title: "Lorem ipsum dolor sit amet.",
+        description: "Lorem ipsum dolor sit amet.",
     },
     {
-        id: 'segundo',
-        title: 'Lorem ipsum dolor sit amet.',
-        description: 'Lorem ipsum dolor sit amet.'
+        id: "segundo",
+        title: "Lorem ipsum dolor sit amet.",
+        description: "Lorem ipsum dolor sit amet.",
     },
     {
-        id: 'tercero',
-        title: 'Lorem ipsum dolor sit amet.',
-        description: 'Lorem ipsum dolor sit amet.'
+        id: "tercero",
+        title: "La importancia de las habilidades sociales en la conducción de reuniones",
+        description: "Las habilidades sociales facilitan la comunicación, promueven la participación y mejoran la toma de decisiones en cualquier reunión de equipo.",
     },
 ];
 ---
 
-{projects.map(project => (
-  <div
-    class="absolute inset-0 flex flex-col justify-center items-center text-center z-30 opacity-0 project-content px-4"
-    id={`${project.id}-content`}
-  >
-    <div class="text-white text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-light leading-snug sm:leading-tight lg:leading-[1.1] mb-6 whitespace-pre-line break-words">
-      {project.title}
-    </div>
-    <div class="text-white text-base sm:text-lg md:text-xl opacity-80 leading-relaxed max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl">
-      {project.description}
-    </div>
-  </div>
-))}
-
+{
+    projects.map((project) => (
+        <div
+            class="absolute inset-0 flex flex-col justify-center items-center text-center z-30 opacity-0 project-content px-4"
+            id={`${project.id}-content`}
+        >
+            <div class="mx-auto text-white text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-light leading-snug sm:leading-tight lg:leading-[1.1] mb-6 whitespace-pre-line break-words max-w-3xl">
+                {project.title}
+            </div>
+            <div class="text-white text-base sm:text-lg md:text-xl opacity-80 leading-relaxed max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl">
+                {project.description}
+            </div>
+        </div>
+    ))
+}

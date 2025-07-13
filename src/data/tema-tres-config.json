@@ -1,123 +1,148 @@
 {
-  "tema": "Habilidades Sociales en Reuniones",
-  "heroContent": {
-    "features": [
-      {
-        "icon": "🎤",
-        "title": "Facilitación Efectiva",
-        "description": "Técnicas para dirigir reuniones productivas y mantener el foco en objetivos",
-        "color": "purple"
-      },
-      {
-        "icon": "🗣️",
-        "title": "Comunicación Asertiva",
-        "description": "Habilidades para expresar ideas claramente y manejar situaciones difíciles",
-        "color": "blue"
-      },
-      {
-        "icon": "🤝",
-        "title": "Construcción de Consenso",
-        "description": "Estrategias para lograr acuerdos y compromiso de todos los participantes",
-        "color": "green"
-      }
-    ]
-  },
-  "mainContent": {
-    "title": "Habilidades Sociales en Reuniones",
-    "subtitle": "Domina las competencias interpersonales esenciales para liderar reuniones efectivas y lograr resultados tangibles",
-    "conceptCards": [
-      {
-        "id": "preparacion-reuniones",
-        "icon": "📋",
-        "title": "Preparación y Planificación",
-        "description": "Fundamentos para estructurar reuniones productivas desde la concepción hasta la ejecución",
-        "image": "https://images.unsplash.com/photo-1559223607-1a2b95ab5a6b?w=600&h=400&fit=crop",
-        "points": [
-          "Definición clara de objetivos",
-          "Agenda estructurada y realista",
-          "Selección estratégica de participantes",
-          "Preparación de materiales y recursos"
-        ],
-        "color": "blue"
-      },
-      {
-        "id": "facilitacion-activa",
-        "icon": "🎯",
-        "title": "Facilitación y Moderación",
-        "description": "Técnicas avanzadas para guiar discusiones, mantener el foco y maximizar la participación",
-        "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&h=400&fit=crop",
-        "points": [
-          "Control del tiempo y flujo de temas",
-          "Técnicas de participación inclusiva",
-          "Manejo de personalidades difíciles",
-          "Síntesis y toma de decisiones grupales"
-        ],
-        "color": "green"
-      },
-      {
-        "id": "seguimiento-resultados",
-        "icon": "📈",
-        "title": "Seguimiento y Resultados",
-        "description": "Estrategias para asegurar que las reuniones generen acciones concretas y resultados medibles",
-        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-        "points": [
-          "Documentación de acuerdos y compromisos",
-          "Asignación clara de responsabilidades",
-          "Cronogramas de seguimiento",
-          "Evaluación de efectividad de reuniones"
-        ],
-        "color": "purple"
-      }
-    ],
-    "statistics": [
-      {
-        "value": "67%",
-        "label": "Reducción en tiempo de reuniones",
-        "color": "blue"
-      },
-      {
-        "value": "85%",
-        "label": "Mayor cumplimiento de acuerdos",
-        "color": "green"
-      },
-      {
-        "value": "78%",
-        "label": "Incremento en participación activa",
-        "color": "purple"
-      },
-      {
-        "value": "92%",
-        "label": "Satisfacción con reuniones",
-        "color": "orange"
-      }
-    ],
-    "methodology": {
-      "title": "Metodología de Reuniones Efectivas",
-      "steps": [
-        {
-          "icon": "📝",
-          "title": "Planificación Estratégica",
-          "description": "Diseño intencional de estructura, objetivos y dinámicas de la reunión",
-          "color": "blue"
-        },
-        {
-          "icon": "🎭",
-          "title": "Ejecución Magistral",
-          "description": "Aplicación de técnicas de facilitación y manejo de dinámicas grupales",
-          "color": "green"
-        },
-        {
-          "icon": "🔄",
-          "title": "Optimización Continua",
-          "description": "Evaluación y mejoramiento constante de procesos y resultados",
-          "color": "purple"
-        }
-      ]
+    "tema": "Habilidades Sociales en Reuniones",
+    "heroContent": {
+        "features": [
+            {
+                "icon": "🎤",
+                "title": "Facilitación Efectiva",
+                "description": "Guía reuniones claras y participativas.",
+                "color": "purple"
+            },
+            {
+                "icon": "🗣️",
+                "title": "Comunicación Asertiva",
+                "description": "Expresa ideas con respeto y claridad.",
+                "color": "blue"
+            },
+            {
+                "icon": "🤝",
+                "title": "Construcción de Consenso",
+                "description": "Fomenta acuerdos y trabajo en equipo.",
+                "color": "green"
+            }
+        ]
     },
-    "callToAction": {
-      "title": "¿Listo para revolucionar tus reuniones?",
-      "description": "Transforma tus reuniones de obligaciones tediosas a sesiones productivas que impulsen el éxito de tu organización",
-      "buttonText": "Mejorar mis Reuniones"
+    "mainContent": {
+        "title": "Habilidades Sociales en Reuniones",
+        "subtitle": "Domina las competencias interpersonales esenciales para liderar reuniones efectivas y lograr resultados tangibles",
+        "conceptCards": [
+            {
+                "id": "preparacion-reuniones",
+                "icon": "📋",
+                "title": "Preparación y Planificación",
+                "description": "Estructura tus reuniones desde la definición de objetivos hasta la selección de participantes clave.",
+                "image": "https://musicaymercado.org/wp-content/uploads/2017/12/pymes-e1513459614156.png",
+                "points": [
+                    "Definir objetivos y agenda",
+                    "Identificar participantes clave",
+                    "Preparar materiales y roles",
+                    "Anticipar posibles puntos de conflicto"
+                ],
+                "color": "blue"
+            },
+            {
+                "id": "facilitacion-activa",
+                "icon": "🎯",
+                "title": "Facilitación y Moderación",
+                "description": "Utiliza técnicas asertivas y escucha activa para guiar discusiones, gestionar el tiempo y manejar diferentes estilos de comunicación.",
+                "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&h=400&fit=crop",
+                "points": [
+                    "Escucha activa y feedback constructivo",
+                    "Gestión del tiempo y foco en los objetivos",
+                    "Técnica DESC para resolver conflictos",
+                    "Síntesis de acuerdos y toma de decisiones grupales"
+                ],
+                "color": "green"
+            },
+            {
+                "id": "seguimiento-resultados",
+                "icon": "📈",
+                "title": "Seguimiento y Resultados",
+                "description": "Asegura el cumplimiento de acuerdos y la mejora continua en la dinámica de reuniones.",
+                "image": "https://www.cetys.mx/educon/wp-content/uploads/2020/12/shutterstock_739242352-scaled.jpg",
+                "points": [
+                    "Documentación de acuerdos y compromisos",
+                    "Asignación clara de responsabilidades",
+                    "Solicitar retroalimentación para futuras reuniones",
+                    "Evaluar la efectividad de la comunicación y dinámica"
+                ],
+                "color": "purple"
+            }
+        ],
+        "statistics": [
+            {
+                "value": "67%",
+                "label": "Reducción en tiempo de reuniones",
+                "color": "blue"
+            },
+            {
+                "value": "85%",
+                "label": "Mayor cumplimiento de acuerdos",
+                "color": "green"
+            },
+            {
+                "value": "78%",
+                "label": "Incremento en participación activa",
+                "color": "purple"
+            },
+            {
+                "value": "92%",
+                "label": "Satisfacción con reuniones",
+                "color": "orange"
+            }
+        ],
+        "methodology": {
+            "title": "Metodología de Reuniones Efectivas",
+            "steps": [
+                {
+                    "icon": "📝",
+                    "title": "Planificación Estratégica",
+                    "description": "Define estructura, objetivos y dinámicas claras, anticipando posibles desacuerdos.",
+                    "color": "blue"
+                },
+                {
+                    "icon": "🎭",
+                    "title": "Ejecución Magistral",
+                    "description": "Aplica técnicas como la escucha activa, comunicación asertiva y el manejo de conflictos.",
+                    "color": "green"
+                },
+                {
+                    "icon": "🔄",
+                    "title": "Optimización Continua",
+                    "description": "Evalúa, solicita retroalimentación y ajusta procesos para lograr reuniones cada vez más efectivas.",
+                    "color": "purple"
+                }
+            ]
+        },
+        "callToAction": {
+            "title": "¿Listo para revolucionar tus reuniones?",
+            "description": "Transforma tus reuniones de obligaciones tediosas a sesiones productivas que impulsen el éxito de tu organización.",
+            "buttonText": "Mejorar mis Reuniones"
+        },
+        "highlightedConcepts": [
+            {
+                "title": "Estilos de Comunicación",
+                "points": [
+                    "Inhibido: No expresa ideas por miedo, afecta la participación y los resultados.",
+                    "Agresivo: Impone opiniones, genera conflictos y desmotivación.",
+                    "Asertivo: Expresa ideas con respeto, fomenta la colaboración y eficacia."
+                ]
+            },
+            {
+                "title": "Ejemplo Práctico",
+                "points": [
+                    "Inhibido: Un ingeniero no menciona su desacuerdo, llevando a errores.",
+                    "Agresivo: Un gerente descalifica una idea, desmotivando al equipo.",
+                    "Asertivo: Un líder reconoce la preocupación de un compañero y propone soluciones, asegurando que todos sean escuchados."
+                ]
+            },
+            {
+                "title": "Frases Clave",
+                "points": [
+                    "“El liderazgo en reuniones se forja en la capacidad de escuchar, conectar y transformar cada idea en acción colectiva.”",
+                    "“Una reunión exitosa no es donde todos hablan, sino donde todos se entienden.”"
+                ]
+            }
+        ]
     }
-  }
 }
