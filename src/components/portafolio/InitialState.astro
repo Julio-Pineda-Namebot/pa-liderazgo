@@ -8,14 +8,14 @@ import StudentsContent from "@components/portafolio/StudentsContent.astro";
 >
   <div
     id="video-poster-wrapper"
-    class="absolute inset-0 flex items-center justify-center rounded-md overflow-hidden cursor-pointer"
+    class="inset-0 flex items-center justify-center rounded-md overflow-hidden cursor-pointer relative"
   >
     <img
       src="/images/posterVideo.jpg"
       alt="Poster del video"
-      class="w-[750px] h-[450px] object-cover rounded-md"
+      class="w-[750px] h-[450px] object-cover rounded-md inset-0"
     />
-    <div class="absolute inset-0 bg-black/30 rounded-md"></div>
+    <div class="absolute w-[750px] h-[450px] bg-black/30 rounded-md pointer-events-none"></div>
     <button
       id="play-button"
       class="absolute text-white bg-white/70 hover:bg-white transition rounded-full p-6"
