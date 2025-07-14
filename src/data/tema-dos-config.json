@@ -4,120 +4,146 @@
     "features": [
       {
         "icon": "👥",
-        "title": "Cohesión Grupal",
-        "description": "Fortalecimiento de vínculos y trabajo colaborativo efectivo",
+        "title": "Fortalecimiento del Trabajo en Equipo",
+        "description": "Promueve la cohesión, la cooperación y el sentido de pertenencia",
         "color": "green"
       },
       {
         "icon": "🔄",
-        "title": "Roles y Funciones",
-        "description": "Definición clara de responsabilidades y expectativas del equipo",
+        "title": "Desarrollo de Habilidades Blandas",
+        "description": "Estimula el liderazgo, la empatía y la creatividad grupal",
         "color": "blue"
       },
       {
         "icon": "⚡",
-        "title": "Resolución de Conflictos",
-        "description": "Técnicas para manejar y resolver tensiones grupales constructivamente",
+        "title": "Impulso a la Innovación y Productividad",
+        "description": "Facilita la toma de decisiones y la resolución de problemas",
         "color": "orange"
       }
     ]
   },
   "mainContent": {
     "title": "Dinámicas de Grupo",
-    "subtitle": "Comprende los procesos internos de los equipos y aprende a optimizar las interacciones para lograr mayor efectividad",
+    "subtitle": "Potencia el rendimiento de tu equipo aplicando técnicas colaborativas y participativas en diversos contextos",
     "conceptCards": [
       {
-        "id": "formacion-equipos",
+        "id": "concepto-aplicacion",
         "icon": "🏗️",
-        "title": "Formación de Equipos",
-        "description": "Proceso estructurado para crear grupos cohesivos y productivos desde el inicio",
+        "title": "Concepto y Aplicación",
+        "description": "Técnicas que promueven la interacción efectiva y el crecimiento colectivo.",
         "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
         "points": [
-          "Selección estratégica de miembros",
-          "Establecimiento de objetivos comunes",
-          "Creación de normas y protocolos",
-          "Desarrollo de identidad grupal"
+          "Basadas en teorías de comunicación y psicología social",
+          "Aplicables en educación, empresas y desarrollo de software",
+          "Favorecen la integración, el liderazgo y el trabajo colaborativo",
+          "Permiten adaptarse a contextos cambiantes"
         ],
         "color": "green"
       },
       {
-        "id": "comunicacion-grupal",
+        "id": "tecnicas-ejemplos",
         "icon": "💬",
-        "title": "Comunicación Efectiva",
-        "description": "Patrones y técnicas de comunicación que facilitan la colaboración y el entendimiento mutuo",
+        "title": "Técnicas Comunes",
+        "description": "Estrategias para fomentar la participación y mejorar resultados",
         "image": "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=600&h=400&fit=crop",
         "points": [
-          "Canales de comunicación claros",
-          "Feedback constructivo y regular",
-          "Escucha activa y empática",
-          "Gestión de malentendidos"
+          "Lluvia de ideas: genera soluciones innovadoras",
+          "Dinámica de roles: simula escenarios reales",
+          "Debate dirigido: fortalece pensamiento crítico",
+          "Seis sombreros: evalúa perspectivas múltiples",
+          "SCAMPER y World Café: estimulan creatividad y diálogo"
         ],
         "color": "blue"
       },
       {
-        "id": "toma-decisiones",
+        "id": "rol-del-facilitador",
         "icon": "🎯",
-        "title": "Toma de Decisiones Grupales",
-        "description": "Métodos y procesos para alcanzar consensos y tomar decisiones efectivas en equipo",
+        "title": "Rol del Facilitador",
+        "description": "Clave para guiar la dinámica y mantener un ambiente equitativo",
         "image": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop",
         "points": [
-          "Técnicas de brainstorming efectivo",
-          "Evaluación de alternativas en grupo",
-          "Consenso vs. votación mayoritaria",
-          "Implementación de decisiones grupales"
+          "Define objetivos y selecciona la técnica adecuada",
+          "Motiva la participación y regula los tiempos",
+          "Actúa con neutralidad y favorece la retroalimentación",
+          "Evalúa los resultados para mejorar futuras sesiones"
         ],
         "color": "purple"
       }
     ],
     "statistics": [
       {
-        "value": "84%",
-        "label": "Mejora en productividad grupal",
+        "value": "80%",
+        "label": "Mejora en la cohesión del equipo",
         "color": "green"
       },
       {
-        "value": "91%",
-        "label": "Reducción de conflictos internos",
+        "value": "75%",
+        "label": "Incremento en la participación activa",
         "color": "blue"
       },
       {
-        "value": "76%",
-        "label": "Mayor satisfacción laboral",
+        "value": "68%",
+        "label": "Reducción de conflictos internos",
         "color": "purple"
       },
       {
-        "value": "88%",
-        "label": "Mejora en comunicación",
+        "value": "85%",
+        "label": "Mayor satisfacción en proyectos grupales",
         "color": "orange"
       }
     ],
     "methodology": {
-      "title": "Proceso de Optimización Grupal",
+      "title": "Metodología de Aplicación de Dinámicas",
       "steps": [
         {
-          "icon": "🔍",
-          "title": "Diagnóstico Grupal",
-          "description": "Evaluación de dinámicas actuales y identificación de áreas de mejora",
+          "icon": "🎯",
+          "title": "Definir Objetivos Claros",
+          "description": "Establece metas alcanzables y alineadas al propósito del grupo",
           "color": "blue"
         },
         {
-          "icon": "🛠️",
-          "title": "Intervención Dirigida",
-          "description": "Aplicación de técnicas específicas para mejorar la efectividad grupal",
+          "icon": "🎲",
+          "title": "Seleccionar la Técnica Apropiada",
+          "description": "Escoge estrategias según las necesidades del equipo y el contexto",
           "color": "green"
         },
         {
           "icon": "📊",
-          "title": "Monitoreo y Ajuste",
-          "description": "Seguimiento continuo y refinamiento de los procesos grupales",
+          "title": "Evaluar Resultados y Retroalimentar",
+          "description": "Mide el impacto de la dinámica y ajusta para futuras sesiones",
           "color": "purple"
         }
       ]
     },
     "callToAction": {
-      "title": "¿Preparado para potenciar tu equipo?",
-      "description": "Descubre cómo las dinámicas grupales pueden transformar la efectividad y satisfacción de tu equipo de trabajo",
-      "buttonText": "Evaluar Dinámicas de mi Equipo"
-    }
+      "title": "¿Listo para transformar a tu equipo?",
+      "description": "Aplica dinámicas de grupo que fortalezcan el compromiso, la innovación y la eficiencia colectiva",
+      "buttonText": "Aplicar Dinámicas"
+    },
+    "highlightedConcepts": [
+      {
+        "title": "Aplicaciones Reales",
+        "points": [
+          "En educación: fomenta el aprendizaje colaborativo",
+          "En software: mejora la comunicación entre desarrolladores",
+          "En empresas: optimiza la toma de decisiones en proyectos"
+        ]
+      },
+      {
+        "title": "Caso Práctico",
+        "points": [
+          "Un equipo de estudiantes simula la gestión de un software con roles definidos",
+          "Se realiza lluvia de ideas para mejorar funcionalidades",
+          "Se utiliza la técnica de los seis sombreros para evaluar riesgos"
+        ]
+      },
+      {
+        "title": "Frases Clave",
+        "points": [
+          "“Las dinámicas de grupo no solo unen equipos, los convierten en motores de cambio.”",
+          "“La colaboración efectiva es el núcleo de toda solución innovadora.”"
+        ]
+      }
+    ]
   }
 }

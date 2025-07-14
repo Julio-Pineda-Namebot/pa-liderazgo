@@ -1,7 +1,7 @@
 ---
 const backgrounds = [
     { id: 'primero', image: "https://concepto.de/wp-content/uploads/2020/11/reunion-de-negocios-scaled-e1741873030151.jpg" },
-    { id: 'segundo', image: "/images/tema2.png" },
+    { id: 'segundo', image: "https://images.pexels.com/photos/8145336/pexels-photo-8145336.jpeg" },
     { id: 'tercero', image: "https://asispa.org/wp-content/uploads/2023/09/trabajo-en-equipo-scaled.jpeg"},
 ];
 ---
@@ -10,6 +10,11 @@ const backgrounds = [
     <div
         id={`${bg.id}-bg`}
         class="absolute inset-0 opacity-0 transition-opacity duration-300"
-        style={`background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5)), url( "${bg.image}" ); background-repeat: no-repeat;`}
+        style={`
+            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5)), url("${bg.image}");
+            background-repeat: no-repeat;
+            ${bg.id === 'segundo' ? 'background-position: center; background-size: cover;' : ''}
+        `}
     ></div>
 ))}
+
