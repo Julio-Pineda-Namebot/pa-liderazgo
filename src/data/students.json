@@ -5,7 +5,7 @@
     "ciclo": "VII",
     "codigoUTP": "U22205882",
     "carrera": "Ingeniería de Sistemas e Informática",
-    "videoUrl":"/videos/JulioNicolasPinedaSanchez.mp4"
+    "videoUrl": "/videos/JulioNicolasPinedaSanchez.mp4"
   },
   {
     "nombres": "Renzo Eduardo",
@@ -13,7 +13,7 @@
     "ciclo": "VII",
     "codigoUTP": "U22202157",
     "carrera": "Ingeniería de Sistemas e Informática",
-    "videoUrl":"/videos/RenzoPuppiHurtado.mp4"
+    "videoUrl": "/videos/RenzoPuppiHurtado.mp4"
   },
   {
     "nombres": "Mateo",
@@ -21,7 +21,7 @@
     "ciclo": "VII",
     "codigoUTP": "U22204709",
     "carrera": "Ingeniería de Sistemas e Informática",
-    "videoUrl":""
+    "videoUrl": "/videos/MateoRiojaPortocarrero.mp4"
   },
   {
     "nombres": "Diego Alessandro",
@@ -29,7 +29,7 @@
     "ciclo": "VII",
     "codigoUTP": "U22202196",
     "carrera": "Ingeniería de Sistemas e Informática",
-    "videoUrl":"/videos/DiegoAlessandroRamirezAssereto.mp4"
+    "videoUrl": "/videos/DiegoAlessandroRamirezAssereto.mp4"
   },
   {
     "nombres": "Said",
@@ -37,7 +37,7 @@
     "ciclo": "VII",
     "codigoUTP": "U22205106",
     "carrera": "Ingenieria de Sistemas e Informática",
-    "videoUrl":""
+    "videoUrl": ""
   },
   {
     "nombres": "Karelly",
@@ -45,7 +45,7 @@
     "ciclo": "VII",
     "codigoUTP": "U21313569",
     "carrera": "Ingenieria de Sistemas e Informática",
-    "videoUrl":""
+    "videoUrl": ""
   },
   {
     "nombres": "David Alejandro",
@@ -53,6 +53,6 @@
     "ciclo": "III",
     "codigoUTP": "U24200468",
     "carrera": "Ingenieria de Sistemas e Informática",
-    "videoUrl":"/videos/DavidAlejandroBerrocalLengua.mp4"
+    "videoUrl": "/videos/DavidAlejandroBerrocalLengua.mp4"
   }
 ]
