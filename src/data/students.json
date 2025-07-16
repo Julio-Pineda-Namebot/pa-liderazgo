@@ -54,5 +54,13 @@
     "codigoUTP": "U24200468",
     "carrera": "Ingenieria de Sistemas e Informática",
     "videoUrl": "/videos/DavidAlejandroBerrocalLengua.mp4"
+  },
+  {
+    "nombres": "Luis",
+    "apellidos": "Marcos Crisostomo",
+    "ciclo": "VII",
+    "codigoUTP": "U22201610",
+    "carrera": "Ingenieria de Sistemas e Informática",
+    "videoUrl": "/videos/LuisMarcosCrisostomo.mp4"
   }
 ]
